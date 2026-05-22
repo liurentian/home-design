@@ -32,7 +32,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 输出目标
 
-最终生成本地 HTML 文件 `装修规划手册.html`，包含完整规划手册。要求：
+最终生成本地 HTML 文件 `index.html`（即装修规划手册），可直接在浏览器中查看或通过 GitHub Pages 分享。要求：
 - 清晰的导航结构（按时间阶段组织）
 - 现代化视觉设计（卡片式布局）
 - 预算追踪仪表盘
