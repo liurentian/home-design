@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郑州 · 116㎡ 新房装修全流程规划</title>
+<style>
+  :root {
+    --bg: #f9f7f4;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --accent: #5b8c5a;
+    --accent-light: #e8f0e7;
+    --warn: #d4843a;
+    --warn-light: #fdf3e8;
+    --danger: #c5554a;
+    --danger-light: #fceeec;
+    --border: #e7e3dd;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+    --radius: 12px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --nav-width: 220px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    display: flex;
+  }
+
+  /* ── Sidebar Navigation ── */
+  nav {
+    position: fixed; top: 0; left: 0;
+    width: var(--nav-width); height: 100vh;
+    background: #fff;
+    border-right: 1px solid var(--border);
+    padding: 28px 20px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  nav .logo {
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--accent); line-height: 1.4; margin-bottom: 2px;
+  }
+  nav .subtitle {
+    font-size: .75rem; color: var(--text-muted); margin-bottom: 8px;
+  }
+  nav .constraint {
+    font-size: .72rem; color: var(--warn);
+    background: var(--warn-light); padding: 6px 10px; border-radius: 6px;
+    margin-bottom: 18px; line-height: 1.4;
+  }
+  nav a {
+    display: block; padding: 7px 12px; margin-bottom: 2px;
+    border-radius: 6px; font-size: .85rem; color: var(--text);
+    text-decoration: none; transition: background .15s;
+  }
+  nav a:hover { background: var(--accent-light); }
+  nav a.active { background: var(--accent); color: #fff; }
+  nav .nav-section {
+    font-size: .7rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: .04em;
+    margin: 16px 0 6px 12px;
+  }
+
+  /* ── Main Content Area ── */
+  main {
+    margin-left: var(--nav-width);
+    flex: 1; max-width: 820px;
+    padding: 40px 48px 80px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #3d5a3c 0%, #5b8c5a 40%, #7aad78 100%);
+    color: #fff; padding: 44px 40px; border-radius: 16px; margin-bottom: 36px;
+  }
+  .hero h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 4px; }
+  .hero .meta { font-size: .92rem; opacity: .85; line-height: 1.5; }
+  .hero .tags { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero .tag {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3);
+    padding: 4px 14px; border-radius: 20px; font-size: .8rem;
+  }
+
+  /* ── Progress Bar ── */
+  .progress-section {
+    background: var(--card); border-radius: var(--radius);
+    padding: 24px 28px; margin-bottom: 36px; box-shadow: var(--shadow);
+  }
+  .progress-section h3 { font-size: .95rem; margin-bottom: 14px; color: var(--text-muted); }
+  .progress-steps { display: flex; justify-content: space-between; position: relative; }
+  .progress-steps::before {
+    content: ''; position: absolute; top: 14px; left: 20px; right: 20px;
+    height: 2px; background: var(--border); z-index: 0;
+  }
+  .progress-steps .step {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 6px; width: 60px;
+  }
+  .step .dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--border); display: flex; align-items: center; justify-content: center;
+    font-size: .75rem; font-weight: 600; color: #fff;
+  }
+  .step.done .dot { background: var(--accent); }
+  .step.current .dot { background: var(--warn); box-shadow: 0 0 0 4px var(--warn-light); }
+  .step .label { font-size: .68rem; color: var(--text-muted); text-align: center; line-height: 1.3; }
+  .step.current .label { color: var(--warn); font-weight: 600; }
+
+  /* ── Sections / Cards ── */
+  section { margin-bottom: 40px; }
+  section h2 {
+    font-size: 1.35rem; font-weight: 700;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  }
+  section h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--accent); color: #fff;
+    font-size: .9rem; font-weight: 700; flex-shrink: 0;
+  }
+  .card {
+    background: var(--card); border-radius: var(--radius);
+    padding: 24px 28px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .card h4 { font-size: .92rem; margin: 16px 0 8px; color: var(--accent); }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; margin: 12px 0; }
+  th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th {
+    font-weight: 600; background: #fafaf8; font-size: .8rem;
+    color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* ── Checklist ── */
+  .checklist { list-style: none; }
+  .checklist li { padding: 6px 0; font-size: .88rem; display: flex; align-items: flex-start; gap: 8px; }
+  .checklist li input[type=checkbox] {
+    margin-top: 4px; flex-shrink: 0; accent-color: var(--accent); width: 16px; height: 16px;
+  }
+
+  /* ── Budget Dashboard ── */
+  .budget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 16px 0; }
+  .budget-item {
+    background: #fafaf8; border-radius: 10px;
+    padding: 16px 18px; border: 1px solid var(--border);
+  }
+  .budget-item .cat-name { font-size: .8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .budget-item .cat-budget { font-size: 1.25rem; font-weight: 700; }
+  .budget-item .cat-bar { margin-top: 8px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .budget-item .cat-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width .4s; }
+
+  .budget-summary { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
+  .budget-summary .bs-item {
+    flex: 1; min-width: 140px; background: var(--card);
+    border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow);
+  }
+  .bs-item .bs-val { font-size: 1.6rem; font-weight: 700; }
+  .bs-item .bs-label { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
+  .bs-total .bs-val { color: var(--accent); }
+  .bs-spent .bs-val { color: var(--warn); }
+  .bs-remain .bs-val { color: var(--text); }
+
+  /* ── Alerts ── */
+  .alert { padding: 12px 16px; border-radius: 8px; font-size: .85rem; margin: 12px 0; }
+  .alert.info { background: #eef4ed; color: #3d5a3c; }
+  .alert.warn { background: var(--warn-light); color: #8b4e1f; }
+  .alert.danger { background: var(--danger-light); color: #8b2e2e; }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+  .timeline .tl-item { position: relative; margin-bottom: 20px; padding-left: 20px; }
+  .timeline .tl-item::before {
+    content: ''; position: absolute; left: -20px; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--accent);
+  }
+  .tl-item .tl-title { font-weight: 600; font-size: .92rem; }
+  .tl-item .tl-desc { font-size: .82rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── Priority Badge ── */
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .75rem; font-weight: 600; }
+  .badge.must { background: var(--danger-light); color: #8b2e2e; }
+  .badge.suggest { background: var(--warn-light); color: #8b4e1f; }
+  .badge.optional { background: #f0f0f0; color: var(--text-muted); }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    body { flex-direction: column; }
+    nav {
+      position: relative; width: 100%; height: auto;
+      border-right: none; border-bottom: 1px solid var(--border);
+      padding: 16px; display: flex; flex-wrap: wrap; gap: 6px;
+    }
+    nav .logo, nav .subtitle, nav .constraint { width: 100%; }
+    nav a { font-size: .78rem; padding: 5px 10px; }
+    main { margin-left: 0; padding: 24px 16px 60px; }
+    .hero { padding: 28px 24px; }
+    .hero h1 { font-size: 1.4rem; }
+    .progress-steps { flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .progress-steps::before { display: none; }
+    .budget-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    nav { display: none; }
+    main { margin-left: 0; padding: 0; max-width: 100%; }
+    .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    .hero { background: none; color: #000; padding: 20px 0; }
+    .hero .tag { border-color: #999; color: #333; }
+    body { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAV ════════════ -->
+<nav>
+  <div class="logo">郑州 · 116㎡<br>装修全流程规划</div>
+  <div class="subtitle">三室两厅两卫 · 两口之家</div>
+  <div class="constraint">全包（亲人工作室）<br>总预算 ¥200,000</div>
+
+  <div class="nav-section">阶段导航</div>
+  <a href="#progress">总体进度</a>
+  <a href="#stage1">一 · 验房</a>
+  <a href="#stage2">二 · 收房</a>
+  <a href="#stage3">三 · 设计（两口之家）</a>
+  <a href="#stage4">四 · 施工（全包监管）</a>
+  <a href="#stage5">五 · 家电选购</a>
+  <a href="#stage6">六 · 预算控制（20万）</a>
+  <a href="#budget-detail">预算明细表</a>
+</nav>
+
+<!-- ════════════ MAIN ════════════ -->
+<main>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <h1>新房装修全流程规划</h1>
+  <div class="meta">
+    河南省郑州市 · 116 平方米 · 三室两厅两卫<br>
+    两口之家（<30岁）· 父母偶住 · 全包施工（亲人工作室）· 总预算 ¥200,000
+  </div>
+  <div class="tags">
+    <span class="tag">收房准备阶段</span>
+    <span class="tag">全包模式</span>
+    <span class="tag">现代简约风</span>
+    <span class="tag">目标工期 3 个月</span>
+  </div>
+</div>
+
+<!-- ── Progress ── -->
+<section id="progress">
+  <h2>装修总进度</h2>
+  <div class="card">
+    <div class="progress-steps">
+      <div class="step current"><div class="dot">1</div><div class="label">验房</div></div>
+      <div class="step"><div class="dot">2</div><div class="label">收房</div></div>
+      <div class="step"><div class="dot">3</div><div class="label">设计</div></div>
+      <div class="step"><div class="dot">4</div><div class="label">施工</div></div>
+      <div class="step"><div class="dot">5</div><div class="label">家电选购</div></div>
+      <div class="step"><div class="dot">6</div><div class="label">软装进场</div></div>
+      <div class="step"><div class="dot">✓</div><div class="label">入住</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 1: 验房 ════════════ -->
+<section id="stage1">
+  <h2><span class="num">1</span> 验房</h2>
+
+  <div class="card">
+    <h3>准备工具</h3>
+    <table>
+      <tr><th>工具</th><th>用途</th></tr>
+      <tr><td>空鼓锤（伸缩款）</td><td>检查墙面/地面空鼓</td></tr>
+      <tr><td>水平仪 / 2米靠尺</td><td>检查墙面地面平整度、垂直度</td></tr>
+      <tr><td>卷尺（5米）</td><td>测量层高、开间进深、对角线</td></tr>
+      <tr><td>相位检测仪（验电器）</td><td>检查插座接线是否正确</td></tr>
+      <tr><td>强光手电筒</td><td>检查墙面裂缝、阴阳角</td></tr>
+      <tr><td>水桶 / 水管</td><td>检查地漏排水、下水通畅</td></tr>
+      <tr><td>粉笔 / 便利贴</td><td>标记问题点</td></tr>
+      <tr><td>A4 纸</td><td>检查窗户密封性</td></tr>
+      <tr><td>手机 / 相机</td><td>拍照存档</td></tr>
+    </table>
+    <div class="alert info">建议请专业验房师，郑州行情约 3-5 元/㎡，116㎡ 约 ¥350-580。也可找装修公司免费验房。</div>
+  </div>
+
+  <div class="card">
+    <h3>入户门 + 全屋门窗检查</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 门框牢固方正，门扇开关顺畅无异响</li>
+      <li><input type="checkbox"> 门扇与门框缝隙均匀（≤3mm），密封条完好</li>
+      <li><input type="checkbox"> 锁具、猫眼正常；门扇表面无划痕磕碰</li>
+      <li><input type="checkbox"> 所有窗户玻璃 3C 认证钢化，无划痕气泡裂纹</li>
+      <li><input type="checkbox"> 窗户推拉/平开顺畅，A4 纸测试密封性</li>
+      <li><input type="checkbox"> 窗框与墙体接缝有密封胶，纱窗完好</li>
+      <li><input type="checkbox"> 阳台推拉门轨道平直、滑动顺畅</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>墙面与地面检查</h3>
+    <div class="alert warn">空鼓检查是重中之重！听到"咚咚"清脆声即为空鼓。单块空鼓 ≤400cm²，每间 ≤2 处。</div>
+    <ul class="checklist">
+      <li><input type="checkbox"> 空鼓锤逐面墙敲击检查空鼓</li>
+      <li><input type="checkbox"> 强光手电检查裂缝（重点关注梁柱交接处、线管开槽处）</li>
+      <li><input type="checkbox"> 门窗洞口四角是否有 45°斜裂缝（结构问题信号）</li>
+      <li><input type="checkbox"> 2 米靠尺检查墙面平整度（≤4mm）和垂直度（≤4mm）</li>
+      <li><input type="checkbox"> 墙面是否有水渍、霉斑（说明有渗漏）</li>
+      <li><input type="checkbox"> 地面是否有贯穿裂缝、空鼓、起砂</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>水电暖检查</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 相位检测仪查每个插座（左零右火上接地）</li>
+      <li><input type="checkbox"> 配电箱回路标识清晰、漏保有效</li>
+      <li><input type="checkbox"> 弱电箱：光纤、网线、电视线是否入户</li>
+      <li><input type="checkbox"> 开水龙头查水压，倒水测每个地漏排水</li>
+      <li><input type="checkbox"> <strong>闭水试验</strong>：卫生间蓄水 2-3cm，48h 后到楼下检查</li>
+      <li><input type="checkbox"> 地暖打压：保持 0.6-0.8MPa，24h 压降 ≤0.05MPa</li>
+      <li><input type="checkbox"> 空调孔位置和内高外低坡度</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 2: 收房 ════════════ -->
+<section id="stage2">
+  <h2><span class="num">2</span> 收房</h2>
+
+  <div class="card">
+    <h3>开发商必须提供的文件</h3>
+    <table>
+      <tr><th>文件</th><th>说明</th></tr>
+      <tr><td>《住宅质量保证书》</td><td>含保修范围及期限</td></tr>
+      <tr><td>《住宅使用说明书》</td><td>使用说明及注意事项</td></tr>
+      <tr><td>《竣工验收备案表》</td><td>建委备案章齐全</td></tr>
+      <tr><td>《面积实测报告》</td><td>房管局测绘队出具</td></tr>
+      <tr><td>《竣工综合验收合格证》</td><td>综合验收通过证明</td></tr>
+    </table>
+    <div class="alert warn">先验房、后收房！开发商要求先签字交钱再验房是违规的。</div>
+  </div>
+
+  <div class="card">
+    <h3>收房费用预估</h3>
+    <table>
+      <tr><th>费用项目</th><th>预估金额</th></tr>
+      <tr><td>契税（90㎡+ 首套 1.5%）</td><td>按总房价计算</td></tr>
+      <tr><td>维修基金（约 ¥65/㎡）</td><td>约 ¥7,540</td></tr>
+      <tr><td>物业费预缴</td><td>视小区定价</td></tr>
+      <tr><td>装修押金（可退）</td><td>约 ¥2,000-3,000</td></tr>
+      <tr><td>垃圾清运费</td><td>约 ¥300-500</td></tr>
+    </table>
+    <div class="alert info">郑州推行"交房即交证"，收房时确认不动产权证办理进度。</div>
+  </div>
+
+  <div class="card">
+    <h3>物业交割</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 入户门钥匙 + 门禁卡 + 信报箱钥匙</li>
+      <li><input type="checkbox"> 水表、电表、燃气表底数拍照记录</li>
+      <li><input type="checkbox"> 签署《业主临时管理规约》</li>
+      <li><input type="checkbox"> 加入小区业主群</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 3: 设计 ════════════ -->
+<section id="stage3">
+  <h2><span class="num">3</span> 设计（两口之家 · 现代简约）</h2>
+
+  <div class="card">
+    <h3>家庭背景与设计定位</h3>
+    <table>
+      <tr><th>常住</th><td>两口之家，均不到 30 岁，无孩</td></tr>
+      <tr><th>偶住</th><td>父母一年来 2-3 次，每次小住 3-5 天</td></tr>
+      <tr><th>风格</th><td><strong>现代简约 + 奶油元素</strong>（奶白+浅木色+浅灰）</td></tr>
+      <tr><th>地面</th><td>浅灰柔光砖 750×1500mm 全屋通铺</td></tr>
+      <tr><th>顶面</th><td>双眼皮吊顶（比全屋平顶省 30-50%）</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>各空间布局方案</h3>
+    <table>
+      <tr><th>空间</th><th>方案</th><th>要点</th></tr>
+      <tr><td>主卧</td><td>1.8m 床 + 双床头柜 + 满墙衣柜</td><td>两人衣物，挂区为主</td></tr>
+      <tr><td>次卧</td><td>1.5m 床 + 小衣柜</td><td>父母来时住，平时可空置或放健身器材</td></tr>
+      <tr><td><strong>第三室</strong></td><td><strong>双人书桌 2m+ + 书柜 + 沙发床</strong></td><td>书房为主，沙发床拉开 1.5m 当客卧</td></tr>
+      <tr><td>客厅</td><td>沙发 + 满墙收纳柜（嵌入电视）</td><td>兼顾收纳、展示、观影</td></tr>
+      <tr><td>餐厅</td><td>1.2-1.4m 餐桌 + 餐边柜（水吧台）</td><td>日常 2-3 人，偶有 4 人</td></tr>
+      <tr><td>厨房</td><td>L 型/U 型 + 洗碗机</td><td>年轻人刚需洗碗机</td></tr>
+      <tr><td>公卫</td><td>干湿分离（洗手台外移）</td><td>提升使用效率</td></tr>
+      <tr><td>主卫</td><td>淋浴房，不做浴缸</td><td>浴缸使用率低、占空间</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>需求确认清单</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 主卧：舒适大床 + 充足衣物收纳</li>
+      <li><input type="checkbox"> 第三室：书房为主 + 偶尔客房（沙发床）</li>
+      <li><input type="checkbox"> 客厅：观影+社交，电视还是投影？</li>
+      <li><input type="checkbox"> 是否需要在家办公 → 决定书桌长度（单人 1.2m / 双人 2m+）</li>
+      <li><input type="checkbox"> 厨房开放/半开放？（确认当地燃气开通要求）</li>
+      <li><input type="checkbox"> 智能家居：智能灯、电动窗帘、智能门锁、扫拖机器人</li>
+      <li><input type="checkbox"> 空调方案：全挂机（预算最优）还是风管机+挂机</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>收纳规划（两人量级）</h3>
+    <table>
+      <tr><th>空间</th><th>收纳形式</th><th>说明</th></tr>
+      <tr><td>玄关</td><td>鞋柜（深度 35cm）</td><td>两人约 40-50 双鞋</td></tr>
+      <tr><td>客厅</td><td>满墙电视柜（深度 35cm）</td><td>杂物、囤货、书籍</td></tr>
+      <tr><td>餐厅</td><td>餐边柜（深度 35-40cm）</td><td>小家电、水吧、零食</td></tr>
+      <tr><td>主卧</td><td>满墙衣柜（深度 60cm）</td><td>两人衣物+床品，挂区为主</td></tr>
+      <tr><td>次卧</td><td>暂不配衣柜</td><td>后期按需加成品柜</td></tr>
+      <tr><td>书房</td><td>书柜+展示柜</td><td>书籍、文件</td></tr>
+      <tr><td>阳台</td><td>阳台柜</td><td>清洁工具、行李箱</td></tr>
+      <tr><td>卫生间</td><td>镜柜+浴室柜</td><td>洗漱护肤+清洁剂</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>灯光方案（预算友好：主灯 + 局部射灯）</h3>
+    <table>
+      <tr><th>区域</th><th>方案</th><th>色温</th></tr>
+      <tr><td>客厅</td><td>简约主灯 + 沙发背景墙射灯×3</td><td>3500K</td></tr>
+      <tr><td>餐厅</td><td>吊灯（距桌面 75cm）</td><td>3000K</td></tr>
+      <tr><td>卧室</td><td>简约吸顶灯 + 床头吊灯</td><td>3000K</td></tr>
+      <tr><td>书房</td><td>吸顶灯 + 书桌台灯</td><td>4000K</td></tr>
+      <tr><td>厨房</td><td>平板灯 + 吊柜下手扫感应灯带</td><td>4000K</td></tr>
+      <tr><td>卫生间</td><td>防水筒灯 + 镜前灯</td><td>4000K</td></tr>
+    </table>
+    <div class="alert info">全屋无主灯（满吊平顶+磁吸轨道）比主灯方案贵 ¥3000-5000，预算紧张建议主灯方案。灯具淘宝中山工厂网购即可。</div>
+  </div>
+
+  <div class="card">
+    <h3>全包模式下的设计建议</h3>
+    <ul class="checklist">
+      <li>工作室的设计师水平有限，自己用<strong>酷家乐</strong>先做一版布局</li>
+      <li>开关插座点位图、灯位图自己画一份给工长</li>
+      <li>小红书搜"郑州 116㎡ 装修"同户型案例，存图给工长看</li>
+      <li>柜体内部格局自己画简图（挂衣区/叠放区比例），别全靠工长定</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 4: 施工 ════════════ -->
+<section id="stage4">
+  <h2><span class="num">4</span> 施工（全包模式 · 亲人工作室监管要点）</h2>
+
+  <div class="card">
+    <h3>施工模式</h3>
+    <p><strong>全包给郑州本地小工作室（家里亲人承接）</strong></p>
+    <p>全包通常含：设计 + 辅材 + 人工 + 主材（瓷砖/地板/门/卫浴/橱柜/吊顶/开关面板等）</p>
+    <div class="alert warn">
+      <strong>即使是亲人，必须白纸黑字写清：</strong>工程范围、主材品牌型号、不含项目、水电点位数量、工期、付款节点、质保期限、增项规则。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>开工前：合同范围确认清单</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 包含项目列表（拆改/水电/防水/贴砖/吊顶/油工/安装）</li>
+      <li><input type="checkbox"> 主材品牌型号（瓷砖/地板/门/卫浴/橱柜板材/开关插座系列）</li>
+      <li><input type="checkbox"> <strong>不包含项目</strong>（美缝？定制柜体？灯具？窗帘？封阳台？）</li>
+      <li><input type="checkbox"> 水电点位数量（插座×? 个、开关×? 个、网口×? 个），超出怎么算</li>
+      <li><input type="checkbox"> 工期起止日期，逾期处理方式</li>
+      <li><input type="checkbox"> 付款节点与比例：签约→水电→瓦工→油工→竣工</li>
+      <li><input type="checkbox"> 质保期：隐蔽工程几年、表面工程几年</li>
+      <li><input type="checkbox"> 写死条款：非甲方主动新增项目，不产生额外费用</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>施工总流程</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-title">1. 拆改砌墙（3-5天）</div><div class="tl-desc">承重墙绝对不能动！新旧墙交接必须植筋+挂网。门洞必须加过梁。</div></div>
+      <div class="tl-item"><div class="tl-title">2. 水电改造（5-7天）★最重要</div><div class="tl-desc">全包最容易减配的环节。确认电线水管品牌。要求水管走顶。验收时亲自在场：打压 0.8MPa 保 30 分钟。拍照+录像存档。</div></div>
+      <div class="tl-item"><div class="tl-title">3. 地暖打压</div><div class="tl-desc">装修期间保持地暖压力表可见。如需重铺，豆石混凝土回填养护 7 天。</div></div>
+      <div class="tl-item"><div class="tl-title">4. 防水工程（2-3天+闭水48h）</div><div class="tl-desc">淋浴区墙面防水到 1.8m。卫生间门口外侧外延 50cm 做挡水坎。闭水 48h 亲自去楼下检查。</div></div>
+      <div class="tl-item"><div class="tl-title">5. 瓦工贴砖（7-10天）</div><div class="tl-desc">进场核对瓷砖品牌型号色号。要求墙地对缝。淋浴区坡度 2-3%。验收逐块敲空鼓。</div></div>
+      <div class="tl-item"><div class="tl-title">6. 木工吊顶（5-7天）</div><div class="tl-desc">轻钢龙骨不偷木龙骨。窗帘盒深度≥15cm（电动≥20cm）。石膏板拐角 L 型整板。</div></div>
+      <div class="tl-item"><div class="tl-title">7. 油工（7-10天）</div><div class="tl-desc">确认腻子和乳胶漆品牌。必须刷底漆（容易偷工）。强光手电侧面照验收无波浪。</div></div>
+      <div class="tl-item"><div class="tl-title">8. 安装季（5-7天）</div><div class="tl-desc">吊顶→橱柜→烟灶→室内门→定制柜→开关灯具→卫浴→地板→美缝→家电。严格按序。</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>电路回路规划（照此要求施工方）</h3>
+    <table>
+      <tr><th>回路</th><th>电线</th><th>说明</th></tr>
+      <tr><td>照明</td><td>1.5mm²</td><td>全屋一路</td></tr>
+      <tr><td>普通插座</td><td>2.5mm²</td><td>客餐厅+卧室，分 2-3 路</td></tr>
+      <tr><td>厨房插座</td><td>4mm²</td><td>独立回路</td></tr>
+      <tr><td>冰箱</td><td>2.5mm²</td><td>独立回路（出远门只留冰箱）</td></tr>
+      <tr><td>客厅空调</td><td>4mm²</td><td>独立回路</td></tr>
+      <tr><td>主卧空调</td><td>4mm²</td><td>独立回路</td></tr>
+      <tr><td>书房空调</td><td>4mm²</td><td>独立回路</td></tr>
+      <tr><td>主卫</td><td>4mm²</td><td>独立回路</td></tr>
+      <tr><td>公卫</td><td>4mm²</td><td>独立回路</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>全包最容易偷工减料的地方</h3>
+    <table>
+      <tr><th>问题</th><th>你怎么防</th></tr>
+      <tr><td>瓷砖偷换品牌/等级</td><td>进场时核对包装箱品牌型号色号</td></tr>
+      <tr><td>电线水管用非标线</td><td>剥开一段看铜芯颜色和粗细</td></tr>
+      <tr><td>防水只刷一遍</td><td>刷的时候你在场看</td></tr>
+      <tr><td>腻子不用耐水的</td><td>看腻子袋子品牌（美巢/立邦等）</td></tr>
+      <tr><td>底漆被省掉</td><td>要求看底漆空桶</td></tr>
+      <tr><td>柜体板材用差的</td><td>看板材截面和环保证书</td></tr>
+      <tr><td>"这个不在合同里，要加钱"</td><td>合同清单写清楚再开工</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>付款节奏（亲人也要按节点！）</h3>
+    <table>
+      <tr><th>节点</th><th>比例</th><th>金额（按11.5万）</th></tr>
+      <tr><td>签约开工</td><td>30%</td><td>¥34,500</td></tr>
+      <tr><td>水电验收合格</td><td>25%</td><td>¥28,750</td></tr>
+      <tr><td>瓦工验收合格</td><td>20%</td><td>¥23,000</td></tr>
+      <tr><td>油工验收合格</td><td>15%</td><td>¥17,250</td></tr>
+      <tr><td>全部竣工整改完毕</td><td>10%</td><td>¥11,500</td></tr>
+    </table>
+    <div class="alert warn">手里永远留尾款！这是你跟任何施工方博弈的唯一筹码。亲人也不例外。</div>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 5: 家电选购 ════════════ -->
+<section id="stage5">
+  <h2><span class="num">5</span> 家电选购（20 万预算版 · 优先级购买）</h2>
+
+  <div class="card">
+    <h3>购买优先级策略</h3>
+    <table>
+      <tr><th>优先级</th><th>说明</th></tr>
+      <tr><td><span class="badge must">必买</span></td><td>入住前必须到位，否则影响正常生活</td></tr>
+      <tr><td><span class="badge suggest">建议买</span></td><td>强烈建议，部分可入住后补</td></tr>
+      <tr><td><span class="badge optional">可选</span></td><td>提升品质，预算有余再买，可大促慢慢添</td></tr>
+    </table>
+    <div class="alert info">不是所有电器一次买齐。先定需要嵌入/安装的（洗碗机、烟灶、风管机），其余可入住后按需添。618/双11京东自营 30 天价保。</div>
+  </div>
+
+  <div class="card">
+    <h3>厨房电器</h3>
+    <table>
+      <tr><th>电器</th><th>优先级</th><th>关键参数</th><th>品牌</th><th>预算</th></tr>
+      <tr><td>烟机+灶具</td><td><span class="badge must">必买</span></td><td>侧吸，风量≥20m³/min，灶≥5.0kW</td><td>华帝/美的/万和</td><td>¥3000-4500</td></tr>
+      <tr><td>冰箱</td><td><span class="badge must">必买</span></td><td>450-500L，风冷双循环，十字/法式</td><td>美的/容声/海尔</td><td>¥3000-4500</td></tr>
+      <tr><td>洗碗机</td><td><span class="badge suggest">建议买</span></td><td>嵌入式 10-13 套，热风烘干</td><td>美的/华凌/海尔</td><td>¥2500-3500</td></tr>
+      <tr><td>净水器</td><td><span class="badge suggest">建议买</span></td><td>RO 反渗透 600-800G</td><td>小米/美的</td><td>¥1200-2000</td></tr>
+      <tr><td>蒸烤箱/微蒸烤</td><td><span class="badge optional">可选</span></td><td>嵌入式或台式</td><td>凯度/美的</td><td>¥1500-3000</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>卫浴电器</h3>
+    <table>
+      <tr><th>电器</th><th>优先级</th><th>关键参数</th><th>品牌</th><th>预算</th></tr>
+      <tr><td>燃气热水器</td><td><span class="badge must">必买</span></td><td>16L，强排式</td><td>万和/海尔/美的</td><td>¥1500-2500</td></tr>
+      <tr><td>洗衣机 10kg</td><td><span class="badge must">必买</span></td><td>滚筒变频一级能效</td><td>小天鹅/海尔</td><td>¥1800-2500</td></tr>
+      <tr><td>烘干机 10kg</td><td><span class="badge suggest">建议买</span></td><td>热泵式（不要冷凝）</td><td>小天鹅/海尔</td><td>¥2500-3500</td></tr>
+      <tr><td>马桶×2</td><td><span class="badge must">必买</span></td><td>公卫普通+智能盖，主卫轻智能</td><td>九牧/恒洁/箭牌</td><td>¥1500-2500/台</td></tr>
+      <tr><td>风暖浴霸×2</td><td><span class="badge must">必买</span></td><td>双电机 2800W+</td><td>欧普/美的/雷士</td><td>¥400-800/台</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>空调方案（推荐全挂机）</h3>
+    <table>
+      <tr><th>房间</th><th>规格</th><th>品牌</th><th>预算</th></tr>
+      <tr><td>客厅</td><td>3匹一级变频柜机</td><td>美的/格力/海尔</td><td>¥5000-6500</td></tr>
+      <tr><td>主卧</td><td>1.5匹一级变频挂机</td><td>美的/格力/海尔</td><td>¥2000-2800</td></tr>
+      <tr><td>书房</td><td>1.5匹一级变频挂机</td><td>美的/格力/海尔</td><td>¥2000-2800</td></tr>
+      <tr><td>次卧</td><td>1.5匹一级变频挂机（可后买）</td><td>美的/格力/海尔</td><td>¥2000-2800</td></tr>
+      <tr><td><strong>合计</strong></td><td></td><td></td><td><strong>¥11000-14900</strong></td></tr>
+    </table>
+    <div class="alert info">不推荐中央空调（贵 1 万+）。次卧空调如果不常用，入往后第一个夏天前再买。</div>
+  </div>
+
+  <div class="card">
+    <h3>客厅 + 其他电器</h3>
+    <table>
+      <tr><th>电器</th><th>优先级</th><th>推荐</th><th>预算</th></tr>
+      <tr><td>电视 75寸</td><td><span class="badge suggest">建议买</span></td><td>海信/TCL/小米 Mini LED</td><td>¥3500-5000</td></tr>
+      <tr><td>扫拖机器人</td><td><span class="badge suggest">建议买</span></td><td>石头/追觅 自动上下水版（装修预留）</td><td>¥2500-3500</td></tr>
+      <tr><td>智能门锁</td><td><span class="badge suggest">建议买</span></td><td>小米/凯迪仕 人脸+指纹</td><td>¥1000-1500</td></tr>
+      <tr><td>全屋 WiFi Mesh</td><td><span class="badge suggest">建议买</span></td><td>TP-LINK/小米 AX3000</td><td>¥500-800</td></tr>
+      <tr><td>洗地机/吸尘器</td><td><span class="badge optional">可选</span></td><td>追觅/添可</td><td>¥1500-2500</td></tr>
+      <tr><td>电动窗帘电机×2</td><td><span class="badge optional">可选</span></td><td>杜亚/Aqara（装修预留插座）</td><td>¥400-700/窗</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>家电预算汇总</h3>
+    <table>
+      <tr><th>类别</th><th>预算</th></tr>
+      <tr><td>厨房（烟灶+冰箱+洗碗机+净水）</td><td>¥9700-14500</td></tr>
+      <tr><td>卫浴（热水器+洗烘+马桶×2+浴霸×2）</td><td>¥8100-13600</td></tr>
+      <tr><td>空调（全挂机 4 台）</td><td>¥11000-14900</td></tr>
+      <tr><td>客厅+其他（电视+机器人+门锁+WiFi）</td><td>¥7500-10600</td></tr>
+      <tr><td><strong>全屋合计（必买+建议买全买）</strong></td><td><strong>¥36300-53600</strong></td></tr>
+      <tr><td><strong>只买必买项</strong></td><td><strong>¥25000-35000</strong></td></tr>
+    </table>
+    <div class="alert warn">家电总预算控制在 ¥40,000 以内。必需品先到位，其余大促慢慢添。</div>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 6: 预算控制 ════════════ -->
+<section id="stage6">
+  <h2><span class="num">6</span> 预算控制（20 万 · 全包）</h2>
+
+  <div class="card">
+    <h3>总预算仪表盘</h3>
+    <div class="budget-summary">
+      <div class="bs-item bs-total"><div class="bs-val">¥200,000</div><div class="bs-label">总预算</div></div>
+      <div class="bs-item bs-spent"><div class="bs-val">¥0</div><div class="bs-label">已花费</div></div>
+      <div class="bs-item bs-remain"><div class="bs-val">¥200,000</div><div class="bs-label">剩余</div></div>
+    </div>
+    <div class="budget-grid">
+      <div class="budget-item">
+        <div class="cat-name">全包硬装</div><div class="cat-budget">¥115,000</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">家具+窗帘+灯具</div><div class="cat-budget">¥25,000</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">家电</div><div class="cat-budget">¥40,000</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">备用金</div><div class="cat-budget">¥20,000</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>全包 ¥115,000 包含/不含确认</h3>
+    <table>
+      <tr><th>类别</th><th>通常包含？</th><th>需确认</th></tr>
+      <tr><td>设计费</td><td>含（简单设计，不出效果图）</td><td>✓</td></tr>
+      <tr><td>拆改+水电+防水+贴砖+吊顶+油工</td><td>含</td><td>✓</td></tr>
+      <tr><td>瓷砖（全屋）+ 木地板（卧室）</td><td>含</td><td>✓ 确认品牌/规格/颜色可选范围</td></tr>
+      <tr><td>室内门（3-4扇）+ 厨卫门</td><td>含</td><td>✓ 烤漆还是免漆</td></tr>
+      <tr><td>橱柜 + 浴室柜×2</td><td>含</td><td>✓ 板材、台面材质</td></tr>
+      <tr><td>马桶×2 + 花洒×2</td><td>含</td><td>✓ 品牌确认</td></tr>
+      <tr><td>厨卫集成吊顶</td><td>含</td><td>✓</td></tr>
+      <tr><td>开关插座面板 + 窗台石</td><td>含</td><td>✓</td></tr>
+      <tr><td><strong>全屋定制柜体</strong></td><td><strong>大概率不含！</strong></td><td><strong>必须确认！</strong></td></tr>
+      <tr><td>美缝/环氧彩砂</td><td>基本不含</td><td>确认</td></tr>
+      <tr><td>封阳台</td><td>基本不含</td><td>确认</td></tr>
+      <tr><td>灯具</td><td>部分含基础款</td><td>确认</td></tr>
+      <tr><td>窗帘</td><td>基本不含</td><td>—</td></tr>
+    </table>
+    <div class="alert danger">
+      <strong>最关键的问题：全屋定制柜体（鞋柜+衣柜+餐边柜+电视柜+阳台柜）是否包含在全包 ¥115,000 内？</strong><br>
+      如果不含，本地工厂做下来约 ¥20,000-25,000，需要从家具或备用金中调拨预算。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>省钱策略</h3>
+    <h4>不能省</h4>
+    <ul class="checklist"><li>水电材料（国标线，不要非标）</li><li>防水材料（雨虹/德高/西卡等品牌）</li><li>乳胶漆（立邦/多乐士/三棵树正品，不要工程漆）</li><li>床垫、沙发、烟机、冰箱（高频使用）</li></ul>
+    <h4>可以降档/后买</h4>
+    <ul class="checklist"><li>瓷砖不追广东大品牌，广东产地合格砖即可</li><li>木地板用强化复合代替实木多层（够用）</li><li>室内门用免漆门代替烤漆门（差 500-800/扇）</li><li>定制柜体找本地工厂，比品牌店便宜 30-50%</li><li>次卧空调、电动窗帘、扫拖机器人可入住后买</li><li>电视可入住后用投影先代替</li></ul>
+  </div>
+
+  <div class="card">
+    <h3>亲人工作室沟通要点</h3>
+    <ul class="checklist">
+      <li>"咱们是亲人，价格上不砍，材料和工艺按自己家装修标准来"</li>
+      <li>不要一上来就说"越便宜越好"，工长听了敢用差材料</li>
+      <li>直接给目标："材料用好的，总价控制在 11.5 万"</li>
+      <li>验收标准一视同仁，该返工就返工</li>
+      <li>如果长辈参与沟通，让你爱人对接，减少代际摩擦</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>超支预警</h3>
+    <table>
+      <tr><th>超支点</th><th>对策</th></tr>
+      <tr><td>全屋定制柜体不含在全包内</td><td>先做必须的（主卧衣柜+鞋柜+餐边柜），其他后期加</td></tr>
+      <tr><td>水电点位超出约定数量</td><td>合同约定好数量，超了按单价算</td></tr>
+      <tr><td>逛建材市场想升级</td><td>先问清升级要加多少钱，再决定</td></tr>
+      <tr><td>家具超预算</td><td>一张床垫 3000 变 8000 → 从备用金走，别处省回来</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════ BUDGET DETAIL TABLE ════════════ -->
+<section id="budget-detail">
+  <h2>预算明细追踪表</h2>
+
+  <div class="card">
+    <h3>全包硬装工程</h3>
+    <table>
+      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
+      <tr><td>全包总价（设计+施工+主材+厨卫）</td><td>¥115,000</td><td>-</td><td>待签约</td></tr>
+      <tr><td>全屋定制柜体（如不含在全包内）</td><td>¥20,000-25,000</td><td>-</td><td>待确认</td></tr>
+      <tr><td>美缝/环氧彩砂</td><td>¥2,500</td><td>-</td><td>待确认</td></tr>
+      <tr><td>封阳台</td><td>¥4,000</td><td>-</td><td>待确认</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>家具 + 窗帘 + 灯具（¥25,000）</h3>
+    <table>
+      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
+      <tr><td>沙发（3人位）</td><td>¥4,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>茶几</td><td>¥800</td><td>-</td><td>待选购</td></tr>
+      <tr><td>餐桌+餐椅×4</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>主卧床+床垫（1.8m）</td><td>¥4,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>次卧床+床垫（1.5m）</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>书房沙发床（1.5m）</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>窗帘（全屋·1688绍兴）</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>全屋灯具（淘宝中山）</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>地毯+挂画+饰品</td><td>¥1,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>其他（床头柜/书桌椅/镜子）</td><td>¥2,700</td><td>-</td><td>待选购</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>家电（¥40,000）</h3>
+    <table>
+      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
+      <tr><td>客厅空调 3匹柜机</td><td>¥5,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>主卧空调 1.5匹挂机</td><td>¥2,300</td><td>-</td><td>待选购</td></tr>
+      <tr><td>书房空调 1.5匹挂机</td><td>¥2,300</td><td>-</td><td>待选购</td></tr>
+      <tr><td>次卧空调 1.5匹挂机（可后买）</td><td>¥2,300</td><td>-</td><td>后买</td></tr>
+      <tr><td>冰箱 450-500L</td><td>¥3,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>烟机+灶具</td><td>¥3,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>洗碗机 10-13套</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>燃气热水器 16L</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>洗衣机 10kg</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>烘干机 10kg 热泵</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>马桶×2</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>风暖浴霸×2</td><td>¥1,000</td><td>-</td><td>待选购</td></tr>
+      <tr><td>电视 75寸（可后买）</td><td>¥4,000</td><td>-</td><td>后买</td></tr>
+      <tr><td>净水器</td><td>¥1,500</td><td>-</td><td>待选购</td></tr>
+      <tr><td>扫拖机器人（可后买）</td><td>¥3,000</td><td>-</td><td>后买</td></tr>
+      <tr><td>智能门锁</td><td>¥1,200</td><td>-</td><td>待选购</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="card" style="text-align:center; color:var(--text-muted); font-size:.82rem; margin-top:48px;">
+  <p>郑州 · 116㎡ 新房装修全流程规划手册 | 更新于 2026 年 5 月</p>
+  <p style="margin-top:4px;">全包模式（亲人工作室）· 两口之家 · 总预算 ¥200,000 · 按时间顺序：验房 → 收房 → 设计 → 施工 → 家电 → 软装</p>
+</div>
+
+</main>
+
+<script>
+(function() {
+  var sections = document.querySelectorAll('section[id]');
+  var links = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', function() {
+    var current = '';
+    sections.forEach(function(s) {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    links.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+})();
+</script>
+</body>
+</html>

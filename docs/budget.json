@@ -1,0 +1,82 @@
+{
+  "project": {
+    "name": "郑州116㎡新房装修",
+    "location": "郑州",
+    "area_sqm": 116,
+    "layout": "三室两厅两卫",
+    "household": "两口之家（<30岁），父母偶住",
+    "construction_mode": "全包（郑州本地亲人工作室）",
+    "target_total_budget": 200000,
+    "actual_total_spent": 0
+  },
+  "categories": {
+    "full_package": {
+      "label": "全包硬装（含设计+施工+主材+厨卫+柜体）",
+      "budget": 115000,
+      "spent": 0,
+      "note": "亲人工作室全包价，需逐项确认包含范围",
+      "items": [
+        {"name": "全包工程总价", "estimated": 115000, "actual": 0, "paid": false, "note": "含设计/拆改/水电/防水/贴砖/吊顶/油工/瓷砖/地板/门/卫浴/橱柜/吊顶/开关面板/窗台石"}
+      ]
+    },
+    "extra_construction": {
+      "label": "全包外可能产生的施工费用",
+      "budget": 0,
+      "spent": 0,
+      "note": "以下项目需确认是否在全包范围内，不在则从此预算走",
+      "items": [
+        {"name": "全屋定制柜体（鞋柜+衣柜+餐边柜+电视柜+阳台柜）", "estimated": 20000, "actual": 0, "paid": false, "note": "大概率不含在全包内，找本地工厂"},
+        {"name": "美缝/环氧彩砂", "estimated": 2500, "actual": 0, "paid": false},
+        {"name": "封阳台", "estimated": 4000, "actual": 0, "paid": false, "note": "需确认物业是否允许"}
+      ]
+    },
+    "furniture": {
+      "label": "家具 + 窗帘 + 灯具",
+      "budget": 25000,
+      "spent": 0,
+      "items": [
+        {"name": "沙发（3人位+贵妃或直排）", "estimated": 4000, "actual": 0, "paid": false},
+        {"name": "茶几", "estimated": 800, "actual": 0, "paid": false},
+        {"name": "餐桌+餐椅×4", "estimated": 2500, "actual": 0, "paid": false},
+        {"name": "主卧床+床垫（1.8m）", "estimated": 4500, "actual": 0, "paid": false},
+        {"name": "次卧床+床垫（1.5m，父母来用）", "estimated": 2500, "actual": 0, "paid": false},
+        {"name": "书房沙发床（1.5m拉开）", "estimated": 2000, "actual": 0, "paid": false},
+        {"name": "窗帘（全屋）", "estimated": 2500, "actual": 0, "paid": false, "note": "1688绍兴柯桥网购"},
+        {"name": "全屋灯具", "estimated": 2000, "actual": 0, "paid": false, "note": "淘宝中山工厂"},
+        {"name": "地毯+挂画+饰品", "estimated": 1500, "actual": 0, "paid": false},
+        {"name": "其他（床头柜/书桌椅/镜子等）", "estimated": 2700, "actual": 0, "paid": false}
+      ]
+    },
+    "appliances": {
+      "label": "家电",
+      "budget": 40000,
+      "spent": 0,
+      "items": [
+        {"name": "客厅空调（3匹柜机）", "estimated": 5500, "actual": 0, "paid": false},
+        {"name": "主卧空调（1.5匹挂机）", "estimated": 2300, "actual": 0, "paid": false},
+        {"name": "书房空调（1.5匹挂机）", "estimated": 2300, "actual": 0, "paid": false},
+        {"name": "次卧空调（1.5匹挂机，可后买）", "estimated": 2300, "actual": 0, "paid": false, "note": "不常用可入住后买"},
+        {"name": "冰箱（450-500L）", "estimated": 3500, "actual": 0, "paid": false},
+        {"name": "烟机+灶具", "estimated": 3500, "actual": 0, "paid": false},
+        {"name": "洗碗机（10-13套）", "estimated": 3000, "actual": 0, "paid": false},
+        {"name": "燃气热水器（16L）", "estimated": 2000, "actual": 0, "paid": false},
+        {"name": "洗衣机（10kg）", "estimated": 2000, "actual": 0, "paid": false},
+        {"name": "烘干机（10kg热泵）", "estimated": 3000, "actual": 0, "paid": false},
+        {"name": "马桶×2（普通+智能盖/轻智能）", "estimated": 3000, "actual": 0, "paid": false},
+        {"name": "风暖浴霸×2", "estimated": 1000, "actual": 0, "paid": false},
+        {"name": "电视（75寸，可后买）", "estimated": 4000, "actual": 0, "paid": false},
+        {"name": "净水器（RO反渗透）", "estimated": 1500, "actual": 0, "paid": false},
+        {"name": "扫拖机器人（可后买）", "estimated": 3000, "actual": 0, "paid": false},
+        {"name": "智能门锁", "estimated": 1200, "actual": 0, "paid": false}
+      ]
+    },
+    "reserve": {
+      "label": "备用金",
+      "budget": 20000,
+      "spent": 0,
+      "items": [
+        {"name": "不可预见费用 / 超支缓冲 / 小额软装补充", "estimated": 20000, "actual": 0, "paid": false}
+      ]
+    }
+  }
+}
