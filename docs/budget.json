@@ -5,7 +5,7 @@
     "area_sqm": 116,
     "layout": "三室两厅两卫",
     "household": "两口之家（<30岁），父母偶住",
-    "construction_mode": "全包（郑州本地亲人工作室）",
+    "construction_mode": "全包（郑州本地熟人工作室）",
     "target_total_budget": 200000,
     "actual_total_spent": 0
   },
@@ -14,7 +14,7 @@
       "label": "全包硬装（含设计+施工+主材+厨卫+柜体）",
       "budget": 115000,
       "spent": 0,
-      "note": "亲人工作室全包价，需逐项确认包含范围",
+      "note": "熟人工作室全包价，需逐项确认包含范围",
       "items": [
         {"name": "全包工程总价", "estimated": 115000, "actual": 0, "paid": false, "note": "含设计/拆改/水电/防水/贴砖/吊顶/油工/瓷砖/地板/门/卫浴/橱柜/吊顶/开关面板/窗台石"}
       ]
