@@ -193,22 +193,69 @@
   .badge.suggest { background: var(--warn-light); color: #8b4e1f; }
   .badge.optional { background: #f0f0f0; color: var(--text-muted); }
 
+  /* ── Hamburger Toggle ── */
+  .nav-toggle {
+    display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: 48px; background: #fff; border-bottom: 1px solid var(--border);
+    align-items: center; padding: 0 16px; gap: 10px;
+  }
+  .nav-toggle .hamburger {
+    width: 28px; height: 28px; flex-shrink: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle .hamburger span {
+    display: block; height: 2px; background: var(--text); border-radius: 1px;
+    transition: transform .2s, opacity .2s;
+  }
+  .nav-toggle .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle .hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-toggle .title { font-size: .9rem; font-weight: 600; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── Nav Overlay (mobile) ── */
+  .nav-overlay {
+    display: none; position: fixed; inset: 0; z-index: 150;
+    background: rgba(0,0,0,.4); opacity: 0; transition: opacity .25s;
+  }
+  .nav-overlay.show { opacity: 1; }
+
   /* ── Responsive ── */
   @media (max-width: 860px) {
     body { flex-direction: column; }
+    .nav-toggle { display: flex; }
+    .nav-overlay { display: block; pointer-events: none; }
+    .nav-overlay.show { pointer-events: auto; }
     nav {
-      position: relative; width: 100%; height: auto;
-      border-right: none; border-bottom: 1px solid var(--border);
-      padding: 16px; display: flex; flex-wrap: wrap; gap: 6px;
+      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+      z-index: 160; padding: 60px 20px 28px; overflow-y: auto;
+      transform: translateX(-100%); transition: transform .25s;
+      border-right: 1px solid var(--border); box-shadow: 2px 0 12px rgba(0,0,0,.08);
     }
-    nav .logo, nav .subtitle, nav .constraint { width: 100%; }
-    nav a { font-size: .78rem; padding: 5px 10px; }
-    main { margin-left: 0; padding: 24px 16px 60px; }
-    .hero { padding: 28px 24px; }
-    .hero h1 { font-size: 1.4rem; }
+    nav.open { transform: translateX(0); }
+    nav a { font-size: .88rem; padding: 10px 12px; }
+    main { margin-left: 0; padding: 56px 14px 60px; }
+    .hero { padding: 24px 20px; border-radius: 12px; }
+    .hero h1 { font-size: 1.3rem; }
+    .hero .meta { font-size: .82rem; }
+    .hero .tag { font-size: .72rem; padding: 3px 10px; }
+    .card { padding: 18px 16px; }
+    section h2 { font-size: 1.15rem; }
+    section h2 .num { width: 28px; height: 28px; font-size: .78rem; border-radius: 8px; }
+    table { font-size: .78rem; }
+    th, td { padding: 7px 8px; }
     .progress-steps { flex-wrap: wrap; gap: 10px; justify-content: center; }
     .progress-steps::before { display: none; }
+    .progress-steps .step { width: 50px; }
+    .step .dot { width: 26px; height: 26px; font-size: .7rem; }
+    .step .label { font-size: .62rem; }
     .budget-grid { grid-template-columns: 1fr; }
+    .budget-summary { gap: 10px; }
+    .budget-summary .bs-item { padding: 14px 16px; min-width: 100px; }
+    .bs-item .bs-val { font-size: 1.3rem; }
+    /* scrollable tables on mobile */
+    .card { overflow-x: auto; }
+    .timeline { padding-left: 18px; }
   }
 
   @media print {
@@ -223,8 +270,17 @@
 </head>
 <body>
 
+<!-- ════════════ MOBILE TOGGLE ════════════ -->
+<div class="nav-toggle">
+  <div class="hamburger" id="navToggle" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </div>
+  <span class="title">郑州 · 116㎡ 装修规划手册</span>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
 <!-- ════════════ NAV ════════════ -->
-<nav>
+<nav id="mainNav">
   <div class="logo">郑州 · 116㎡<br>装修全流程规划</div>
   <div class="subtitle">三室两厅两卫 · 两口之家</div>
   <div class="constraint">全包（亲人工作室）<br>总预算 ¥200,000</div>
@@ -775,8 +831,38 @@
 
 <script>
 (function() {
+  var nav = document.getElementById('mainNav');
+  var toggle = document.getElementById('navToggle');
+  var overlay = document.getElementById('navOverlay');
+  var links = nav.querySelectorAll('a[href^="#"]');
   var sections = document.querySelectorAll('section[id]');
-  var links = document.querySelectorAll('nav a[href^="#"]');
+
+  function openNav() {
+    nav.classList.add('open');
+    toggle.classList.add('open');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    nav.classList.remove('open');
+    toggle.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function() {
+    nav.classList.contains('open') ? closeNav() : openNav();
+  });
+  overlay.addEventListener('click', closeNav);
+
+  // Close nav when a link is tapped on mobile
+  links.forEach(function(a) {
+    a.addEventListener('click', function() {
+      if (window.innerWidth <= 860) closeNav();
+    });
+  });
+
+  // Scroll spy
   window.addEventListener('scroll', function() {
     var current = '';
     sections.forEach(function(s) {
