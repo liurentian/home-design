@@ -114,6 +114,24 @@
 
   /* ── Sections / Cards ── */
   section { margin-bottom: 40px; }
+
+  /* ── Section sharing via URL hash ── */
+  body.share-mode .hero,
+  body.share-mode .progress-section,
+  body.share-mode section[id]:not(:target),
+  body.share-mode main > .card:last-of-type {
+    display: none;
+  }
+  body.share-mode section[id]:target {
+    display: block;
+    margin-top: 20px;
+  }
+  /* Back-to-full link in share mode */
+  .share-back {
+    display: none;
+    font-size: .82rem; margin-bottom: 20px;
+  }
+  body.share-mode .share-back { display: block; }
   section h2 {
     font-size: 1.35rem; font-weight: 700;
     margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
@@ -294,11 +312,16 @@
   <a href="#stage5">五 · 家电选购</a>
   <a href="#stage6">六 · 预算控制（20万）</a>
   <a href="#stage7">七 · 全屋智能 + 网络</a>
+  <a href="#stage8">八 · 全屋净水</a>
   <a href="#budget-detail">预算明细表</a>
 </nav>
 
 <!-- ════════════ MAIN ════════════ -->
 <main>
+
+<div class="share-back">
+  <a href=".">← 查看完整手册</a>
+</div>
 
 <!-- ── Hero ── -->
 <div class="hero">
@@ -977,7 +1000,7 @@
       <tr><th>目标</th><td>装修预留 + 入住后低成本实现全屋语音控制（灯光/空调/窗帘/家电）</td></tr>
       <tr><th>生态</th><td><strong>米家设备 + HomeBridge 桥接 → Siri/小爱双控</strong></td></tr>
       <tr><th>网络</th><td>Mesh 有线回程：客厅主路由 + 北次卧子路由</td></tr>
-      <tr><th>预算</th><td>¥1,500-2,000（不含已持有的 HomePod、风扇、台灯）</td></tr>
+      <tr><th>预算</th><td>纯智能设备 ¥841-891（不含已持有的 HomePod、风扇、台灯；不含窗帘电机/智能开关等可能含在全包内的项目）</td></tr>
       <tr><th>不做</th><td>全屋调光、背景音乐、安防传感器全覆盖</td></tr>
     </table>
   </div>
@@ -1083,6 +1106,90 @@
       <tr><td>观影</td><td>"小爱同学，电影模式"</td><td>客厅灯关/暗、窗帘关</td></tr>
       <tr><td>调空调</td><td>"小爱同学，主卧空调 26 度"</td><td>对应房间空调响应</td></tr>
       <tr><td>开关窗帘</td><td>"小爱同学，开客厅窗帘"</td><td>对应窗帘自动开/关</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════ STAGE 8: 全屋净水 ════════════ -->
+<section id="stage8">
+  <h2><span class="num">8</span> 全屋净水</h2>
+
+  <div class="card">
+    <h3>方案总览</h3>
+    <table>
+      <tr><th>目标</th><td>装修阶段做好预留，用最低预算解决全屋基础过滤 + 饮用水净化</td></tr>
+      <tr><th>做法</th><td><strong>前置过滤器（40μm） + 末端 RO 反渗透净水器</strong></td></tr>
+      <tr><th>预算</th><td>¥1,300-2,300（前置 ¥300-500 + RO ¥1,000-1,800）</td></tr>
+      <tr><th>不做</th><td>中央净水、中央软水（设备贵 ¥8000+、占橱柜空间、两口之家用量小）</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>净水四级体系</h3>
+    <table>
+      <tr><th>级别</th><th>设备</th><th>过滤精度</th><th>作用</th><th>本方案</th></tr>
+      <tr><td>①</td><td>前置过滤器</td><td>40μm</td><td>过滤泥沙、铁锈、虫卵 → 保护全屋用水设备</td><td>✅ 装</td></tr>
+      <tr><td>②</td><td>中央净水器</td><td>活性炭/KDF</td><td>去除余氯、有机物</td><td>❌ 跳过</td></tr>
+      <tr><td>③</td><td>中央软水机</td><td>离子交换</td><td>去除钙镁离子 → 软水</td><td>❌ 跳过</td></tr>
+      <tr><td>④</td><td>末端 RO 净水器</td><td>0.0001μm</td><td>直饮水，去水垢/重金属/细菌/病毒</td><td>✅ 装</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>前置过滤器</h3>
+    <table>
+      <tr><th>安装位置</th><td>优先装<strong>水井房</strong>（不占室内空间，反冲洗废水直接排楼道地漏）；水井房不行就装室内水表后。收房时问物业是否允许。</td></tr>
+      <tr><th>过滤精度</th><td>40μm（太细容易堵，太粗过滤效果差）</td></tr>
+      <tr><th>冲洗方式</th><td>选反冲洗（reverse flush），不选直冲——直冲洗不干净，久了流量衰减</td></tr>
+      <tr><th>材质</th><td>316 不锈钢滤网 + 无铅铜主体</td></tr>
+      <tr><th>推荐</th><td>沁园 FMP306 / 美的 QZBW20S-12 / 海尔 HPF37，¥300-500</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>末端 RO 反渗透净水器</h3>
+    <table>
+      <tr><th>安装位置</th><td>厨房水槽下橱柜，机子尺寸约 40×20×40cm</td></tr>
+      <tr><th>推荐通量</th><td>600G-800G（两口之家够用，接一杯水 8-12 秒）</td></tr>
+      <tr><th>推荐型号</th><td>小米米家 600G ¥999-1,199 / 美的白泽 600G ¥1,099-1,399</td></tr>
+      <tr><th>优选理由</th><td>小米生态统一，App 看水质 TDS、滤芯寿命、用水量</td></tr>
+      <tr><th>年均耗材</th><td>¥150-300（PP 棉 + 活性炭 + RO 膜分期更换）</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>装修预留</h3>
+    <table>
+      <tr><th>预留项</th><th>位置</th><th>说明</th></tr>
+      <tr><td>前置过滤器安装位</td><td>水井房或水表后管段</td><td>留水平管段 + 活接，水电阶段确认</td></tr>
+      <tr><td>RO 净水器电源</td><td>厨房水槽下橱柜内</td><td>留 1 个 5 孔插座，这是最容易漏掉的</td></tr>
+      <tr><td>RO 进水</td><td>水槽冷水角阀</td><td>冷水角阀留三通，接 2 分管到 RO 机</td></tr>
+      <tr><td>RO 废水排放</td><td>水槽排水管</td><td>排水管上打孔接废水管夹</td></tr>
+    </table>
+    <div class="alert warn"><strong>水电交底重点</strong>：跟电工说"水槽下留个插座给净水器"，不说电工默认不留。RO 净水器电源漏掉后期走明线，难看且不安全。</div>
+  </div>
+
+  <div class="card">
+    <h3>与厨房布局的关系</h3>
+    <p>RO 净水器装在水槽下橱柜（约 40×20cm），洗碗机独立放在水槽旁边的 600mm 宽柜体里，<strong>两者空间不冲突</strong>。前置过滤器如果装室内，也放水槽下角落（约 30×15cm），水槽下空间完全够。</p>
+  </div>
+
+  <div class="card">
+    <h3>采购时机</h3>
+    <table>
+      <tr><th>设备</th><th>时机</th><th>原因</th></tr>
+      <tr><td>前置过滤器</td><td><strong>水电阶段</strong>，提前买好</td><td>水电师傅顺手装上，不另收费</td></tr>
+      <tr><td>RO 净水器</td><td><strong>入住前</strong></td><td>电子设备更新快，晚买型号新；装修期间放工地怕碰坏</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>不做的项目</h3>
+    <table>
+      <tr><th>项目</th><th>原因</th></tr>
+      <tr><td>中央净水器</td><td>设备 ¥3,000-5,000，占半个橱柜，RO 机前两级滤芯已含活性炭</td></tr>
+      <tr><td>中央软水机</td><td>设备 ¥4,000-8,000，需定期加盐，两口之家不值得</td></tr>
+      <tr><td>管线机（即热饮水机）</td><td>需预埋 PE 管到客厅，增加施工量；台面即热饮水机 ¥200-400 手动加水一样用</td></tr>
     </table>
   </div>
 </section>
@@ -1193,6 +1300,18 @@
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   });
+
+  // Section share mode via URL hash
+  function updateShareMode() {
+    var hash = window.location.hash;
+    if (hash && (hash.match(/^#stage\d+$/) || hash === '#budget-detail')) {
+      document.body.classList.add('share-mode');
+    } else {
+      document.body.classList.remove('share-mode');
+    }
+  }
+  updateShareMode();
+  window.addEventListener('hashchange', updateShareMode);
 })();
 </script>
 </body>

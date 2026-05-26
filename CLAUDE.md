@@ -30,6 +30,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 5. **家电选购** — 预算优先型全屋家电清单
 6. **预算控制** — 20 万分配方案、全包合同避坑、熟人装修注意事项
 7. **全屋智能+网络** — 米家+HomeBridge 双生态、Mesh 组网、语音控制全屋方案
+8. **全屋净水** — 前置过滤器 + 末端 RO 反渗透，装修预留与采购时机
 
 ## 输出目标
 
