@@ -175,6 +175,8 @@
   .budget-item .cat-budget { font-size: 1.25rem; font-weight: 700; }
   .budget-item .cat-bar { margin-top: 8px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
   .budget-item .cat-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width .4s; }
+  table.nowrap-first td:first-child, table.nowrap-first th:first-child { white-space: nowrap; }
+  .budget-item .cat-paid { font-size: .75rem; color: var(--text-muted); margin-top: 6px; }
 
   .budget-summary { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
   .budget-summary .bs-item {
@@ -185,6 +187,7 @@
   .bs-item .bs-label { font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
   .bs-total .bs-val { color: var(--accent); }
   .bs-spent .bs-val { color: var(--warn); }
+  .bs-over .bs-val { color: var(--danger, #b03a3a); }
   .bs-remain .bs-val { color: var(--text); }
 
   /* ── Alerts ── */
@@ -1039,6 +1042,45 @@
   <h2><span class="num">5</span> 家电选购（20 万预算版 · 优先级购买）</h2>
 
   <div class="card">
+    <h3>已选型号（2026 双 11 · 同步自预算明细表）</h3>
+    <table class="nowrap-first">
+      <tr><th>家电</th><th>型号</th><th>价格</th><th>原预算</th><th>要核对的点</th></tr>
+      <tr><td>中央空调</td><td>格力智慧星 一拖四（外机 14kW，内机 8.0/3.6/3.6/2.5kW）</td><td>¥21,800</td><td>¥12,400（全挂机）</td><td>报价是否含铜管超长、冷凝水管、线控器；接米家需另配 485 网关（¥400-800）</td></tr>
+      <tr><td>燃气热水器</td><td>美的 M9S Max 16L（JSQ30）</td><td>¥1,470</td><td>¥2,000</td><td>要零冷水就在水电阶段定回水管/回水阀</td></tr>
+      <tr><td>烟机灶具</td><td>美的 CXW-140-AK7 PRO + JZT-AK7</td><td>¥3,061</td><td>¥3,500</td><td>高层核对最大风压 ≥400Pa；灶具天然气版；开孔尺寸台面测量前给厂家</td></tr>
+      <tr><td>洗碗机</td><td>美的 S1Pro</td><td>¥3,825</td><td>¥3,000</td><td>确认嵌入式及宽深高（柜体按 600×580×845 预留）</td></tr>
+      <tr><td>冰箱</td><td>美的冰镜 555 2.0 pro（双系统）</td><td>¥4,849（返现约 ¥300 + 送烤箱）</td><td>¥3,500</td><td><strong>冰箱位按海尔 830×594×1900 留的</strong>，核对美的尺寸及散热间隙</td></tr>
+      <tr><td>电视</td><td>创维 A7H 85 寸</td><td>¥4,976</td><td>¥4,000（75 寸）</td><td>电视墙宽 ≥2.2m；石膏板墙预埋加固；<strong>问物业包装箱（约 2.1m）能否进电梯</strong></td></tr>
+      <tr><td>洗衣</td><td>小天鹅 K200 热泵洗烘一体 12kg + mini 小乌梅 2.0 Max + 小乌梅洗鞋机</td><td>¥10,200</td><td>¥5,000（洗+烘）</td><td>三台都买需三套进水/排水/插座；<strong>建议只买 K200</strong></td></tr>
+      <tr><td>净水器</td><td>美的星河 5.0 净矿 1200 pro</td><td>¥1,337（好评返 ¥100）</td><td>¥1,500</td><td>双出水龙头或台面多开一孔</td></tr>
+      <tr><td>前置过滤器</td><td>美的 QZBW20S-56ST</td><td>¥607</td><td>—</td><td>入户总阀后，旁边留反冲洗排水（自动款还要电源）</td></tr>
+      <tr><td>扫拖机器人</td><td>石头 P20 Max 上下水版</td><td>¥2,782</td><td>¥3,000</td><td>基站位预埋进水+排水+插座，柜体留基站位</td></tr>
+      <tr><td><strong>合计</strong></td><td></td><td><strong>¥54,907</strong></td><td></td><td></td></tr>
+    </table>
+    <div class="alert danger"><strong>同口径超支 ¥20,438（+51%）。</strong>原 ¥40,000 家电预算含马桶、浴霸、门锁；加上这三项（¥3,200 + ¥1,000 + ¥1,331）现为 ¥60,438。主要来自中央空调（+¥9,400）和洗衣三件套（+¥5,200）。</div>
+  </div>
+
+  <div class="card">
+    <h3>延迟发货也要先定尺寸</h3>
+    <ul class="checklist">
+      <li><input type="checkbox"> 阳台按最终洗衣方案预留进水、排水、插座（原方案只有 1 套）</li>
+      <li><input type="checkbox"> 扫地机基站位置定好，预埋进水+排水</li>
+      <li><input type="checkbox"> 冰箱、洗碗机、烟灶、水槽尺寸在柜体/台面测量前交给厂家</li>
+      <li><input type="checkbox"> 前置过滤器安装位 + 排水 + 电源</li>
+      <li><input type="checkbox"> 两个马桶坑距 + 旁边插座</li>
+      <li><input type="checkbox"> 物业确认 85 寸电视能否进电梯</li>
+    </ul>
+    <h4>省钱建议</h4>
+    <table>
+      <tr><th>动作</th><th>可省</th></tr>
+      <tr><td>洗衣只买 K200，砍掉 mini 洗衣机和洗鞋机（先查 K200 单买的双 11 价）</td><td>¥4,000-4,500</td></tr>
+      <tr><td>浴室柜 ¥4,000 / 花洒 ¥2,000 / 水池 ¥2,000 现为估算，双 11 认真比价</td><td>¥1,500-2,500</td></tr>
+      <tr><td>电视 85 → 75 寸（可选）</td><td>约 ¥1,500</td></tr>
+    </table>
+    <div class="alert info">前两项做完，大约能把备用金恢复到 ¥5,000-7,000。下方是最初的选购指南，供参考。</div>
+  </div>
+
+  <div class="card">
     <h3>购买优先级策略</h3>
     <table>
       <tr><th>优先级</th><th>说明</th></tr>
@@ -1083,7 +1125,7 @@
       <tr><td>南次卧</td><td>1.5匹一级变频挂机（可后买）</td><td>美的/格力/海尔</td><td>¥2000-2800</td></tr>
       <tr><td><strong>合计</strong></td><td></td><td></td><td><strong>¥11000-14900</strong></td></tr>
     </table>
-    <div class="alert info">不推荐中央空调（贵 1 万+）。南次卧空调如果不常用，入住后第一个夏天前再买。</div>
+    <div class="alert info">最初建议全挂机；<strong>实际已选格力智慧星一拖四中央空调 ¥21,800</strong>，比全挂机多约 ¥9,400。</div>
   </div>
 
   <div class="card">
@@ -1110,7 +1152,7 @@
       <tr><td><strong>全屋合计（必买+建议买全买）</strong></td><td><strong>¥36300-53600</strong></td></tr>
       <tr><td><strong>只买必买项</strong></td><td><strong>¥25000-35000</strong></td></tr>
     </table>
-    <div class="alert warn">家电总预算控制在 ¥40,000 以内。必需品先到位，其余大促慢慢添。</div>
+    <div class="alert warn">原计划家电控制在 ¥40,000 以内；实际已选型号合计 ¥54,907（同口径 ¥60,438），见本节顶部。</div>
   </div>
 </section>
 
@@ -1121,28 +1163,49 @@
   <div class="card">
     <h3>总预算仪表盘</h3>
     <div class="budget-summary">
-      <div class="bs-item bs-total"><div class="bs-val">¥200,000</div><div class="bs-label">总预算</div></div>
-      <div class="bs-item bs-spent"><div class="bs-val">¥0</div><div class="bs-label">已花费</div></div>
-      <div class="bs-item bs-remain"><div class="bs-val">¥200,000</div><div class="bs-label">剩余</div></div>
+      <div class="bs-item bs-total"><div class="bs-val">¥200,000</div><div class="bs-label">目标预算</div></div>
+      <div class="bs-item bs-over"><div class="bs-val">¥218,829</div><div class="bs-label">当前计划总额（超 ¥18,829）</div></div>
+      <div class="bs-item bs-spent"><div class="bs-val">¥62,161</div><div class="bs-label">已付</div></div>
+      <div class="bs-item bs-remain"><div class="bs-val">¥156,668</div><div class="bs-label">未付</div></div>
     </div>
     <div class="budget-grid">
       <div class="budget-item">
-        <div class="cat-name">全包硬装</div><div class="cat-budget">¥115,000</div>
-        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+        <div class="cat-name">硬装基装</div><div class="cat-budget">¥61,500</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:66%"></div></div>
+        <div class="cat-paid">已付 ¥40,364（66%）</div>
       </div>
       <div class="budget-item">
-        <div class="cat-name">家具+窗帘+灯具</div><div class="cat-budget">¥25,000</div>
+        <div class="cat-name">定制（柜体/隔断/踢脚线）</div><div class="cat-budget">¥37,030</div>
         <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+        <div class="cat-paid">已付 ¥0（0%）</div>
       </div>
       <div class="budget-item">
-        <div class="cat-name">家电</div><div class="cat-budget">¥40,000</div>
+        <div class="cat-name">家电</div><div class="cat-budget">¥54,907</div>
         <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+        <div class="cat-paid">已付 ¥0（0%）</div>
       </div>
       <div class="budget-item">
-        <div class="cat-name">备用金</div><div class="cat-budget">¥20,000</div>
-        <div class="cat-bar"><div class="cat-bar-fill" style="width:0%"></div></div>
+        <div class="cat-name">卫浴洁具</div><div class="cat-budget">¥13,090</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:7%"></div></div>
+        <div class="cat-paid">已付 ¥890（7%）</div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">家具 + 门 + 窗帘</div><div class="cat-budget">¥26,238</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:10%"></div></div>
+        <div class="cat-paid">已付 ¥2,498（10%）</div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">全屋智能</div><div class="cat-budget">¥5,122</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:40%"></div></div>
+        <div class="cat-paid">已付 ¥2,067（40%）</div>
+      </div>
+      <div class="budget-item">
+        <div class="cat-name">杂项（封窗/灯具/物业预缴等）</div><div class="cat-budget">¥20,942</div>
+        <div class="cat-bar"><div class="cat-bar-fill" style="width:78%"></div></div>
+        <div class="cat-paid">已付 ¥16,342（78%）</div>
       </div>
     </div>
+    <div class="alert danger" style="margin-top:16px;"><strong>备用金已经为 0。</strong>原计划留 ¥20,000 备用金，现在计划总额已超目标 ¥18,829；表外还有餐桌椅、茶几、中央空调米家网关、电视挂架、施工增项等，预计最终落地 ¥225,000-230,000。进度条 = 该分类已付比例。数据来源：预算明细表.xlsx（2026-10-15）。</div>
   </div>
 
   <div class="card">
@@ -1407,55 +1470,107 @@
 <!-- ════════════ BUDGET DETAIL TABLE ════════════ -->
 <section id="budget-detail">
   <h2>预算明细追踪表</h2>
+  <p style="color:var(--text-muted); margin-bottom:24px;">同步自 预算明细表.xlsx（2026-10-15）· 计划总额 ¥218,829 · 已付 ¥62,161 · 未付 ¥156,668</p>
 
   <div class="card">
-    <h3>全包硬装工程</h3>
+    <h3>硬装基装（¥61,500 · 已付 ¥40,364）</h3>
     <table>
-      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
-      <tr><td>全包总价（设计+施工+主材+厨卫）</td><td>¥115,000</td><td>-</td><td>待签约</td></tr>
-      <tr><td>全屋定制柜体（如不含在全包内）</td><td>¥20,000-25,000</td><td>-</td><td>待确认</td></tr>
-      <tr><td>美缝/环氧彩砂</td><td>¥2,500</td><td>-</td><td>待确认</td></tr>
-      <tr><td>封阳台</td><td>¥4,000</td><td>-</td><td>待确认</td></tr>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>基础报价</td><td>拆改、瓷砖（连工带料）、防水、水电、吊顶、刷漆、开荒保洁</td><td>¥56,136</td><td>部分支付 ¥35,000</td></tr>
+      <tr><td>燃气表移位</td><td>2588 - 14</td><td>¥2,564</td><td>已付</td></tr>
+      <tr><td>瓷砖美缝</td><td>聚脲压缝-桌高喜砂</td><td>¥2,800</td><td>已付</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥61,500</strong></td><td></td></tr>
     </table>
   </div>
 
   <div class="card">
-    <h3>家具 + 窗帘 + 灯具（¥25,000）</h3>
+    <h3>定制（柜体/隔断/踢脚线）（¥37,030 · 已付 ¥0）</h3>
     <table>
-      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
-      <tr><td>沙发（3人位）</td><td>¥4,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>茶几</td><td>¥800</td><td>-</td><td>待选购</td></tr>
-      <tr><td>餐桌+餐椅×4</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>主卧床+床垫（1.8m）</td><td>¥4,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>南次卧床+床垫（1.5m）</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>北次卧沙发床（1.5m）</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>窗帘（全屋·1688绍兴）</td><td>¥2,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>全屋灯具（淘宝中山）</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>地毯+挂画+饰品</td><td>¥1,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>其他（床头柜/书桌椅/镜子）</td><td>¥2,700</td><td>-</td><td>待选购</td></tr>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>成品金属踢脚线</td><td>82.00 * 15 = 材质钛镁合金</td><td>¥1,230</td><td>待定</td></tr>
+      <tr><td>主卧玻璃隔断</td><td>黑色边框+水波纹艺术玻璃，单玻8mm。</td><td>¥800</td><td>待定</td></tr>
+      <tr><td>桌柜定制</td><td>50平 * 650</td><td>¥35,000</td><td>待定</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥37,030</strong></td><td></td></tr>
     </table>
   </div>
 
   <div class="card">
-    <h3>家电（¥40,000）</h3>
+    <h3>家电（¥54,907 · 已付 ¥0）</h3>
     <table>
-      <tr><th>项目</th><th>预估</th><th>实际</th><th>状态</th></tr>
-      <tr><td>客厅空调 3匹柜机</td><td>¥5,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>主卧空调 1.5匹挂机</td><td>¥2,300</td><td>-</td><td>待选购</td></tr>
-      <tr><td>北次卧空调 1.5匹挂机</td><td>¥2,300</td><td>-</td><td>待选购</td></tr>
-      <tr><td>南次卧空调 1.5匹挂机（可后买）</td><td>¥2,300</td><td>-</td><td>后买</td></tr>
-      <tr><td>冰箱 450-500L</td><td>¥3,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>烟机+灶具</td><td>¥3,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>洗碗机 10-13套</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>燃气热水器 16L</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>洗衣机 10kg</td><td>¥2,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>烘干机 10kg 热泵</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>马桶×2</td><td>¥3,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>风暖浴霸×2</td><td>¥1,000</td><td>-</td><td>待选购</td></tr>
-      <tr><td>电视 75寸（可后买）</td><td>¥4,000</td><td>-</td><td>后买</td></tr>
-      <tr><td>净水器</td><td>¥1,500</td><td>-</td><td>待选购</td></tr>
-      <tr><td>扫拖机器人（可后买）</td><td>¥3,000</td><td>-</td><td>后买</td></tr>
-      <tr><td>智能门锁</td><td>¥1,200</td><td>-</td><td>待选购</td></tr>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>中央空调</td><td>一拖四，格力智慧星</td><td>¥21,800</td><td>待定</td></tr>
+      <tr><td>燃气热水器</td><td>美的M9S Max（JSQ30-M9S Max）</td><td>¥1,470</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>烟机灶具</td><td>美的：CXW-140-AK7 PRO（烟机） + JZT-AK7（灶）</td><td>¥3,061</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>洗碗机</td><td>美的S1Pro</td><td>¥3,825</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>冰箱</td><td>美的冰镜555 2.0 pro</td><td>¥4,849</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>电视</td><td>创维A7H-85寸</td><td>¥4,976</td><td>延迟发货</td></tr>
+      <tr><td>洗衣机</td><td>小天鹅k200热泵洗烘一体（12KG） + mini小乌梅2.0 Max(单洗) + 小乌梅洗鞋机</td><td>¥10,200</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>净水器</td><td>星河5.0升级净矿1200 pro</td><td>¥1,337</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>前置过滤器</td><td>美的 QZBW20S-56ST</td><td>¥607</td><td>延迟发货</td></tr>
+      <tr><td>扫拖机器人</td><td>石头P20Max-上下水</td><td>¥2,782</td><td>双11要购买</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥54,907</strong></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>卫浴洁具（¥13,090 · 已付 ¥890）</h3>
+    <table>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>轻智能马桶</td><td>九牧SQ9650-1599 返现100</td><td>¥3,200</td><td>双11要购买 · 延迟发货</td></tr>
+      <tr><td>地漏+角阀+止逆阀</td><td>潜水艇一厨两卫套餐</td><td>¥890</td><td>已付</td></tr>
+      <tr><td>浴室柜*2</td><td>-</td><td>¥4,000</td><td>双11要购买</td></tr>
+      <tr><td>花洒*2</td><td>-</td><td>¥2,000</td><td>双11要购买</td></tr>
+      <tr><td>浴霸*2</td><td>奥普S2：普通浴霸支持接入米家 + 夜灯</td><td>¥1,000</td><td>双11要购买</td></tr>
+      <tr><td>厨房水池</td><td>-</td><td>¥2,000</td><td>双11要购买</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥13,090</strong></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>家具 + 门 + 窗帘（¥26,238 · 已付 ¥2,498）</h3>
+    <table>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>窗帘</td><td>-</td><td>¥3,000</td><td>待定</td></tr>
+      <tr><td>床+床垫 * 2</td><td>两张床垫：1199+ 1299</td><td>¥6,498</td><td>部分支付 ¥2,498</td></tr>
+      <tr><td>卧室木门* 3</td><td>-</td><td>¥3,000</td><td>待定</td></tr>
+      <tr><td>卫生间玻璃门*2</td><td>-</td><td>¥1,640</td><td>待定</td></tr>
+      <tr><td>厨房三联动</td><td>-</td><td>¥2,800</td><td>待定</td></tr>
+      <tr><td>次卧推拉门</td><td>-</td><td>¥1,700</td><td>待定</td></tr>
+      <tr><td>沙发</td><td>-</td><td>¥6,000</td><td>待定</td></tr>
+      <tr><td>电动窗帘电机+轨道 * 2</td><td>-</td><td>¥1,600</td><td>待定</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥26,238</strong></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>全屋智能（¥5,122 · 已付 ¥2,067）</h3>
+    <table>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>吸顶AP</td><td>TP-link-5100HC</td><td>¥438</td><td>已付</td></tr>
+      <tr><td>POE交换机</td><td>水星MSG05CP</td><td>¥53</td><td>已付</td></tr>
+      <tr><td>人在传感器*2</td><td>-</td><td>¥160</td><td>待定</td></tr>
+      <tr><td>网关</td><td>小米中枢网关</td><td>¥280</td><td>待定</td></tr>
+      <tr><td>智能音响</td><td>小米智能音响pro</td><td>¥244</td><td>已付</td></tr>
+      <tr><td>智能开关</td><td>领普S5触屏三开* 2 = 278；领普E5pro三开 * 12 =  1053.72</td><td>¥1,332</td><td>已付</td></tr>
+      <tr><td>晾衣架</td><td>米家晾衣架3</td><td>¥984</td><td>双11要购买</td></tr>
+      <tr><td>智能门锁</td><td>小米智能门锁4Pro 双摄版</td><td>¥1,331</td><td>双11要购买</td></tr>
+      <tr><td>摄像头</td><td>-</td><td>¥300</td><td>待定</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥5,122</strong></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>杂项（封窗/灯具/物业预缴等）（¥20,942 · 已付 ¥16,342）</h3>
+    <table>
+      <tr><th>项目</th><th>型号/说明</th><th>金额</th><th>状态</th></tr>
+      <tr><td>阳台封窗</td><td>三玻夹胶*10.5</td><td>¥7,600</td><td>已付</td></tr>
+      <tr><td>普通插座</td><td>-</td><td>¥1,000</td><td>双11要购买</td></tr>
+      <tr><td>全屋灯具</td><td>-</td><td>¥3,000</td><td>双11要购买</td></tr>
+      <tr><td>智能灯带</td><td>10m *3 ，5m *1， 还有一个 400w 的变压器，一个 200w 的变压器</td><td>¥698</td><td>已付</td></tr>
+      <tr><td>交房预缴费用</td><td>一年物业费 3.18 * 115.53 *12 = 4408.68；装修押金 3000；垃圾清运费： 115.53 * 10= 1155.3；电费预缴： 200</td><td>¥8,764</td><td>已付</td></tr>
+      <tr><td>推拉门回收</td><td>客厅、次卧推拉门回收</td><td>¥-720</td><td>已付</td></tr>
+      <tr><td>多乐士乳胶漆升级</td><td>金装五合一 &gt; 劲护系列</td><td>¥600</td><td>待定</td></tr>
+      <tr><td><strong>小计</strong></td><td></td><td><strong>¥20,942</strong></td><td></td></tr>
     </table>
   </div>
 </section>
@@ -1631,9 +1746,8 @@
     <h4>阳台</h4>
     <table>
       <tr><th>内容</th><th>数量</th><th>位置/高度</th><th>备注</th></tr>
-      <tr><td>洗衣机 10A 插座</td><td>1</td><td>洗衣机位</td><td>防水盒</td></tr>
-      <tr><td>烘干机插座</td><td>1</td><td>烘干机位</td><td>如需要</td></tr>
-      <tr><td>扫地机器人充电位</td><td>1</td><td>阳台柜内/客厅角落</td><td>预留</td></tr>
+      <tr><td>洗衣机 10A 插座 + 进水 + 地排</td><td>按机器数</td><td>洗衣机位</td><td>防水盒；K200 + mini 小乌梅 + 洗鞋机全买需 3 套，只买 K200 则 1 套</td></tr>
+      <tr><td>扫地机基站（石头 P20 Max 上下水）</td><td>插座 + 进水角阀 + 排水</td><td>阳台柜内/客厅角落</td><td>按基站尺寸在柜体留位</td></tr>
       <tr><td>阳台灯开关</td><td>1 位</td><td>阳台门边</td><td>智能 + 零线</td></tr>
     </table>
   </div>
@@ -1644,18 +1758,18 @@
     <h4>厨房橱柜</h4>
     <table>
       <tr><th>嵌入式电器</th><th>尺寸要求（宽×深×高 mm）</th><th>水电预留</th><th>备注</th></tr>
-      <tr><td>冰箱（海尔山茶花 510/502）</td><td>830×594×1900</td><td>侧面留插座，单独回路</td><td>提前确认型号定柜体</td></tr>
-      <tr><td>洗碗机（西门子 17 套）</td><td>600×580×845</td><td>柜体侧面/背面插座+进排水</td><td></td></tr>
-      <tr><td>烟机灶具（老板 D1P / 方太 V10-G）</td><td>烟机宽 900 深 370</td><td>吊顶内插座</td><td>止逆阀提前换</td></tr>
-      <tr><td>净水器 + 管线机</td><td>水槽下</td><td>水槽下插座+预埋水管</td><td></td></tr>
-      <tr><td>燃气热水器 16L</td><td></td><td>单独插座+燃气管道</td><td>确认燃气表是 G2.5</td></tr>
+      <tr><td>冰箱（美的冰镜 555 2.0 pro）</td><td>原按海尔 830×594×1900 预留，<strong>待按美的实际尺寸复核</strong></td><td>侧面留插座，单独回路</td><td>柜体下单前确认宽深高+散热间隙</td></tr>
+      <tr><td>洗碗机（美的 S1Pro）</td><td>原按 600×580×845 预留，待复核</td><td>柜体侧面/背面插座+进排水</td><td>确认是嵌入式</td></tr>
+      <tr><td>烟机灶具（美的 AK7 PRO 套装）</td><td>按烟机实际宽度 + 灶具开孔尺寸</td><td>吊顶内插座</td><td>止逆阀提前换；开孔尺寸给台面厂</td></tr>
+      <tr><td>净水器（美的星河净矿 1200）+ 前置过滤器</td><td>水槽下 / 入户总阀后</td><td>水槽下插座；前置旁留排水（自动冲洗款加电源）</td><td>净矿双出水需双出水龙头或台面多开一孔</td></tr>
+      <tr><td>燃气热水器（美的 M9S Max 16L）</td><td></td><td>单独插座+燃气管道</td><td>要零冷水就预留回水</td></tr>
     </table>
 
     <h4>其他柜体</h4>
     <table>
       <tr><th>位置</th><th>柜体</th><th>预留</th></tr>
       <tr><td>客厅</td><td>电视柜</td><td>插座+网口隐藏柜内，穿线管预埋</td></tr>
-      <tr><td>阳台</td><td>洗衣机柜</td><td>叠放/并排，清洁用品格</td></tr>
+      <tr><td>阳台</td><td>洗衣机柜</td><td>按最终洗衣方案（K200 洗烘一体，可能加 mini 洗衣机/洗鞋机）留位，清洁用品格</td></tr>
       <tr><td>主卧</td><td>衣柜</td><td>内部灯带预留线</td></tr>
     </table>
   </div>

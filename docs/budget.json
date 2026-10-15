@@ -1,82 +1,592 @@
 {
   "project": {
-    "name": "郑州116㎡新房装修",
+    "name": "郑州116㎡新房装修（万祥紫庐）",
     "location": "郑州",
     "area_sqm": 116,
     "layout": "三室两厅两卫",
     "household": "两口之家（<30岁），父母偶住",
-    "construction_mode": "全包（郑州本地熟人工作室）",
     "target_total_budget": 200000,
-    "actual_total_spent": 0
+    "planned_total": 218828.7,
+    "paid_total": 62160.7,
+    "unpaid_total": 156668.0,
+    "over_target": 18828.7,
+    "reserve_left": 0,
+    "source": "预算明细表.xlsx",
+    "updated": "2026-10-15"
+  },
+  "original_plan": {
+    "full_package": 115000,
+    "furniture": 25000,
+    "appliances": 40000,
+    "reserve": 20000,
+    "note": "最初的 20 万框架；现已改为基装 + 定制 + 主材分项采购，按 categories 实际数据追踪"
   },
   "categories": {
-    "full_package": {
-      "label": "全包硬装（含设计+施工+主材+厨卫+柜体）",
-      "budget": 115000,
-      "spent": 0,
-      "note": "熟人工作室全包价，需逐项确认包含范围",
+    "appliances": {
+      "label": "家电",
+      "planned": 54907,
+      "paid": 0,
       "items": [
-        {"name": "全包工程总价", "estimated": 115000, "actual": 0, "paid": false, "note": "含设计/拆改/水电/防水/贴砖/吊顶/油工/瓷砖/地板/门/卫浴/橱柜/吊顶/开关面板/窗台石"}
-      ]
-    },
-    "extra_construction": {
-      "label": "全包外可能产生的施工费用",
-      "budget": 0,
-      "spent": 0,
-      "note": "以下项目需确认是否在全包范围内，不在则从此预算走",
-      "items": [
-        {"name": "全屋定制柜体（鞋柜+衣柜+餐边柜+电视柜+阳台柜）", "estimated": 20000, "actual": 0, "paid": false, "note": "大概率不含在全包内，找本地工厂"},
-        {"name": "美缝/环氧彩砂", "estimated": 2500, "actual": 0, "paid": false},
-        {"name": "封阳台", "estimated": 4000, "actual": 0, "paid": false, "note": "需确认物业是否允许"}
+        {
+          "name": "中央空调",
+          "model": "一拖四，格力智慧星",
+          "amount": 21800,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": "140.80.36.36.25"
+        },
+        {
+          "name": "燃气热水器",
+          "model": "美的M9S Max（JSQ30-M9S Max）",
+          "amount": 1470,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "水伺服恒温、16L、无冷感"
+        },
+        {
+          "name": "烟机灶具",
+          "model": "美的：CXW-140-AK7 PRO（烟机） + JZT-AK7（灶）",
+          "amount": 3061,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "高温蒸汽洗、烟灶联动、定时"
+        },
+        {
+          "name": "洗碗机",
+          "model": "美的S1Pro",
+          "amount": 3825,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": ""
+        },
+        {
+          "name": "冰箱",
+          "model": "美的冰镜555 2.0 pro",
+          "amount": 4849,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "双系统、玻璃面板、带制冰、新国标能耗，冷藏冷冻双 PST 净味；5099 - 250；收到货后送-美的烤箱、种草-100，好评-150，瓜分返50元。；共约返300元现金"
+        },
+        {
+          "name": "电视",
+          "model": "创维A7H-85寸",
+          "amount": 4976,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "延迟发货",
+          "note": ""
+        },
+        {
+          "name": "洗衣机",
+          "model": "小天鹅k200热泵洗烘一体（12KG） + mini小乌梅2.0 Max(单洗) + 小乌梅洗鞋机",
+          "amount": 10200,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "小天鹅k200洗烘一体（12KG） + mini小乌梅2.0 Max + 小乌梅洗鞋机；单买：5699 + 2999 + 3699；型号：TNGG40-09AID+TDH12K200+TXX30U20"
+        },
+        {
+          "name": "净水器",
+          "model": "星河5.0升级净矿1200 pro",
+          "amount": 1337,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "净、矿双出水；好评返现： 100"
+        },
+        {
+          "name": "前置过滤器",
+          "model": "美的 QZBW20S-56ST",
+          "amount": 607,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "延迟发货",
+          "note": ""
+        },
+        {
+          "name": "扫拖机器人",
+          "model": "石头P20Max-上下水",
+          "amount": 2782,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        }
       ]
     },
     "furniture": {
-      "label": "家具 + 窗帘 + 灯具",
-      "budget": 25000,
-      "spent": 0,
+      "label": "家具 + 门 + 窗帘",
+      "planned": 26238,
+      "paid": 2498,
       "items": [
-        {"name": "沙发（3人位+贵妃或直排）", "estimated": 4000, "actual": 0, "paid": false},
-        {"name": "茶几", "estimated": 800, "actual": 0, "paid": false},
-        {"name": "餐桌+餐椅×4", "estimated": 2500, "actual": 0, "paid": false},
-        {"name": "主卧床+床垫（1.8m）", "estimated": 4500, "actual": 0, "paid": false},
-        {"name": "次卧床+床垫（1.5m，父母来用）", "estimated": 2500, "actual": 0, "paid": false},
-        {"name": "书房沙发床（1.5m拉开）", "estimated": 2000, "actual": 0, "paid": false},
-        {"name": "窗帘（全屋）", "estimated": 2500, "actual": 0, "paid": false, "note": "1688绍兴柯桥网购"},
-        {"name": "全屋灯具", "estimated": 2000, "actual": 0, "paid": false, "note": "淘宝中山工厂"},
-        {"name": "地毯+挂画+饰品", "estimated": 1500, "actual": 0, "paid": false},
-        {"name": "其他（床头柜/书桌椅/镜子等）", "estimated": 2700, "actual": 0, "paid": false}
+        {
+          "name": "窗帘",
+          "model": "",
+          "amount": 3000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "床+床垫 * 2",
+          "model": "两张床垫：1199+ 1299",
+          "amount": 6498,
+          "pay_status": "部分支付",
+          "paid_amount": 2498,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "卧室木门* 3",
+          "model": "",
+          "amount": 3000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "卫生间玻璃门*2",
+          "model": "",
+          "amount": 1640,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "厨房三联动",
+          "model": "",
+          "amount": 2800,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "次卧推拉门",
+          "model": "",
+          "amount": 1700,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "沙发",
+          "model": "",
+          "amount": 6000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": "6200 狄普"
+        },
+        {
+          "name": "电动窗帘电机+轨道 * 2",
+          "model": "",
+          "amount": 1600,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        }
       ]
     },
-    "appliances": {
-      "label": "家电",
-      "budget": 40000,
-      "spent": 0,
+    "smart_home": {
+      "label": "全屋智能",
+      "planned": 5121.64,
+      "paid": 2066.64,
       "items": [
-        {"name": "客厅空调（3匹柜机）", "estimated": 5500, "actual": 0, "paid": false},
-        {"name": "主卧空调（1.5匹挂机）", "estimated": 2300, "actual": 0, "paid": false},
-        {"name": "书房空调（1.5匹挂机）", "estimated": 2300, "actual": 0, "paid": false},
-        {"name": "次卧空调（1.5匹挂机，可后买）", "estimated": 2300, "actual": 0, "paid": false, "note": "不常用可入住后买"},
-        {"name": "冰箱（450-500L）", "estimated": 3500, "actual": 0, "paid": false},
-        {"name": "烟机+灶具", "estimated": 3500, "actual": 0, "paid": false},
-        {"name": "洗碗机（10-13套）", "estimated": 3000, "actual": 0, "paid": false},
-        {"name": "燃气热水器（16L）", "estimated": 2000, "actual": 0, "paid": false},
-        {"name": "洗衣机（10kg）", "estimated": 2000, "actual": 0, "paid": false},
-        {"name": "烘干机（10kg热泵）", "estimated": 3000, "actual": 0, "paid": false},
-        {"name": "马桶×2（普通+智能盖/轻智能）", "estimated": 3000, "actual": 0, "paid": false},
-        {"name": "风暖浴霸×2", "estimated": 1000, "actual": 0, "paid": false},
-        {"name": "电视（75寸，可后买）", "estimated": 4000, "actual": 0, "paid": false},
-        {"name": "净水器（RO反渗透）", "estimated": 1500, "actual": 0, "paid": false},
-        {"name": "扫拖机器人（可后买）", "estimated": 3000, "actual": 0, "paid": false},
-        {"name": "智能门锁", "estimated": 1200, "actual": 0, "paid": false}
+        {
+          "name": "吸顶AP",
+          "model": "TP-link-5100HC",
+          "amount": 438,
+          "pay_status": "已付",
+          "paid_amount": 438,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "POE交换机",
+          "model": "水星MSG05CP",
+          "amount": 52.92,
+          "pay_status": "已付",
+          "paid_amount": 52.92,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "人在传感器*2",
+          "model": "",
+          "amount": 160,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "网关",
+          "model": "小米中枢网关",
+          "amount": 280,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "智能音响",
+          "model": "小米智能音响pro",
+          "amount": 244,
+          "pay_status": "已付",
+          "paid_amount": 244,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "智能开关",
+          "model": "领普S5触屏三开* 2 = 278；领普E5pro三开 * 12 =  1053.72",
+          "amount": 1331.72,
+          "pay_status": "已付",
+          "paid_amount": 1331.72,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "晾衣架",
+          "model": "米家晾衣架3",
+          "amount": 984,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "智能门锁",
+          "model": "小米智能门锁4Pro 双摄版",
+          "amount": 1331,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "摄像头",
+          "model": "",
+          "amount": 300,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        }
       ]
     },
-    "reserve": {
-      "label": "备用金",
-      "budget": 20000,
-      "spent": 0,
+    "bathroom": {
+      "label": "卫浴洁具",
+      "planned": 13090,
+      "paid": 890,
       "items": [
-        {"name": "不可预见费用 / 超支缓冲 / 小额软装补充", "estimated": 20000, "actual": 0, "paid": false}
+        {
+          "name": "轻智能马桶",
+          "model": "九牧SQ9650-1599 返现100",
+          "amount": 3200,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "延迟发货",
+          "note": "九牧SQ9650；https://u.jd.com/Fraf1Fd；✅SQ9650 轻智能马桶 预估到手💰15XX（下单1640）；⚠❤全网保价双 11；👉下单：https://u.jd.com/Fraf1Fd；🔹平台 85 折立减 + PLUS 立减 19 + 随机券 100；🧧1 元锁定晚 8 返 100 + 6 瓶魔力泡（2 瓶标配 285ml + 4 瓶加赠 480ml）；🧧再升级【免费拆旧】+ 赠品 4 选 1（马桶刷 / 垃圾桶 / 魔力泡 / 京豆）"
+        },
+        {
+          "name": "地漏+角阀+止逆阀",
+          "model": "潜水艇一厨两卫套餐",
+          "amount": 890,
+          "pay_status": "已付",
+          "paid_amount": 890,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "浴室柜*2",
+          "model": "",
+          "amount": 4000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "花洒*2",
+          "model": "",
+          "amount": 2000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "浴霸*2",
+          "model": "奥普S2：普通浴霸支持接入米家 + 夜灯",
+          "amount": 1000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "厨房水池",
+          "model": "",
+          "amount": 2000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        }
+      ]
+    },
+    "custom": {
+      "label": "定制（柜体/隔断/踢脚线）",
+      "planned": 37030,
+      "paid": 0,
+      "items": [
+        {
+          "name": "成品金属踢脚线",
+          "model": "82.00 * 15 = 材质钛镁合金",
+          "amount": 1230,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "主卧玻璃隔断",
+          "model": "黑色边框+水波纹艺术玻璃，单玻8mm。",
+          "amount": 800,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "桌柜定制",
+          "model": "50平 * 650",
+          "amount": 35000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        }
+      ]
+    },
+    "misc": {
+      "label": "杂项（封窗/灯具/物业预缴等）",
+      "planned": 20942.06,
+      "paid": 16342.06,
+      "items": [
+        {
+          "name": "阳台封窗",
+          "model": "三玻夹胶*10.5",
+          "amount": 7600,
+          "pay_status": "已付",
+          "paid_amount": 7600,
+          "priority": "",
+          "status": "",
+          "note": "5838+1786=7624"
+        },
+        {
+          "name": "普通插座",
+          "model": "",
+          "amount": 1000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "全屋灯具",
+          "model": "",
+          "amount": 3000,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "双11要购买",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "智能灯带",
+          "model": "10m *3 ，5m *1， 还有一个 400w 的变压器，一个 200w 的变压器",
+          "amount": 698.08,
+          "pay_status": "已付",
+          "paid_amount": 698.08,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "交房预缴费用",
+          "model": "一年物业费 3.18 * 115.53 *12 = 4408.68；装修押金 3000；垃圾清运费： 115.53 * 10= 1155.3；电费预缴： 200",
+          "amount": 8763.98,
+          "pay_status": "已付",
+          "paid_amount": 8763.98,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "推拉门回收",
+          "model": "客厅、次卧推拉门回收",
+          "amount": -720,
+          "pay_status": "已付",
+          "paid_amount": -720,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "多乐士乳胶漆升级",
+          "model": "金装五合一 > 劲护系列",
+          "amount": 600,
+          "pay_status": "未付",
+          "paid_amount": 0,
+          "priority": "",
+          "status": "",
+          "note": ""
+        }
+      ]
+    },
+    "base": {
+      "label": "硬装基装",
+      "planned": 61500,
+      "paid": 40364,
+      "items": [
+        {
+          "name": "基础报价",
+          "model": "拆改、瓷砖（连工带料）、防水、水电、吊顶、刷漆、开荒保洁",
+          "amount": 56136,
+          "pay_status": "部分支付",
+          "paid_amount": 35000,
+          "priority": "",
+          "status": "",
+          "note": "第一阶段：已付20000；第一阶段：已付15000"
+        },
+        {
+          "name": "燃气表移位",
+          "model": "2588 - 14",
+          "amount": 2564,
+          "pay_status": "已付",
+          "paid_amount": 2564,
+          "priority": "",
+          "status": "",
+          "note": ""
+        },
+        {
+          "name": "瓷砖美缝",
+          "model": "聚脲压缝-桌高喜砂",
+          "amount": 2800,
+          "pay_status": "已付",
+          "paid_amount": 2800,
+          "priority": "",
+          "status": "",
+          "note": ""
+        }
       ]
     }
+  },
+  "appliance_review": {
+    "comparable_total": 60438,
+    "comparable_note": "家电分类 ¥54,907 + 马桶 ¥3,200 + 浴霸 ¥1,000 + 门锁 ¥1,331，与原 4 万家电预算同口径",
+    "over_plan": 20438,
+    "drivers": [
+      {
+        "item": "中央空调（替代全挂机）",
+        "plan": 12400,
+        "actual": 21800,
+        "diff": 9400
+      },
+      {
+        "item": "洗衣三件套（替代洗衣机+烘干机）",
+        "plan": 5000,
+        "actual": 10200,
+        "diff": 5200
+      },
+      {
+        "item": "冰箱 美的冰镜555",
+        "plan": 3500,
+        "actual": 4849,
+        "diff": 1349
+      },
+      {
+        "item": "电视 75→85 寸",
+        "plan": 4000,
+        "actual": 4976,
+        "diff": 976
+      },
+      {
+        "item": "洗碗机 美的S1Pro",
+        "plan": 3000,
+        "actual": 3825,
+        "diff": 825
+      }
+    ],
+    "savings": [
+      {
+        "item": "洗衣只买 K200 热泵洗烘一体，砍掉 mini 洗衣机和洗鞋机",
+        "saving": "¥4,000-4,500"
+      },
+      {
+        "item": "浴室柜/花洒/水池双11比价（现为整数估算 ¥8,000）",
+        "saving": "¥1,500-2,500"
+      },
+      {
+        "item": "电视 85→75 寸（可选）",
+        "saving": "约 ¥1,500"
+      }
+    ],
+    "not_in_sheet": [
+      "餐桌椅、茶几",
+      "中央空调接米家网关（¥400-800）",
+      "电视挂架",
+      "施工增项（基装 5-10%）"
+    ]
   }
 }
